@@ -1,0 +1,70 @@
+1. модуль application
+a. f_hospitalizations_appointment
+1)	select * from f_hospitalizations_appointment fha 
+where event_type != 'cancelled'
+2)	select * from f_hospitalizations_appointment fha 
+where event_date < '2024-09-01'
+3)	select * from f_hospitalizations_appointment fha 
+where  resource_procedure  is not null and resource_procedure <> ''
+b. f_togglers
+1)	select name  from f_togglers ft 
+where state = true
+order by name asc  
+2)	select count(name)  from f_togglers ft 
+where state = false
+3)	update f_togglers 
+set state = true 
+where name = 'isDispensaryObservationEnabled'
+
+2. модуль notification
+a. f_user
+1)	select * from f_user fu
+where patient_id = '24859513'
+2)	select patient_id r  from f_user fu 
+where oms_number = '2000000000006'
+b. f_device и f_device_settings
+1)	select *  from f_device fd  
+join f_device_settings fds  on fd.device_guid = fds.device_guid 
+where app_version = '7.10.0'
+2)	select fd.device_guid  from f_device fd  
+join f_device_settings fds  on fd.device_guid = fds.device_guid 
+where fd.platform = 'APPLE'
+3)	select count(platform)  from f_device fd  
+where platform = 'HUAWEI'
+4)	select *  from f_device_settings fds 
+where fds.device_guid = 'b8a45a58-3e34-400b-8542-b914d8fbac8f'
+5)	select *  from f_device fd 
+join f_device_settings fds on fd.device_guid = fds.device_guid 
+where fds.appointment = false
+
+c. f_device, f_user_device, f_user
+select fd  from f_device fd 
+join f_user_device fud on fd.device_guid = fud.device_guid 
+join f_user fu on fud.user_id = fu.id 
+where fud.authentication = true and fd.platform = 'ANDROID' and fu.oms_number = '0556130838000530'
+
+d. f_notification_*, f_notification_task и предыдущие
+1)	select fn  from f_notification fn 
+join f_notification_appointment fna on fn.id = fna.notification_id 
+where fna.appointment_id = '391930335555'
+2)	–
+3)	select distinct   fn.id, fnt.send_date, fn.title, fn.description, fn.viewed from f_user fu
+inner join f_user_device fud on fu.id = fud.user_id 
+inner join f_notification fn on fn.user_id = fu.id
+inner join f_notification_task fnt on fn.id = fnt.notification_id
+where fud.device_guid = '6a21c93e-c0e5-49d0-a6a3-5fea2e51e1f6' and fu.patient_id = '10166510' 
+       and fud.deleted = false and (fnt.status = 'SEND' or fnt.status = 'DONT_SEND')
+       and fnt.device_guid = '6a21c93e-c0e5-49d0-a6a3-5fea2e51e1f6' and fud.user_id = fn.user_id 
+       and fn.notification_type_id in (select dnt.id from d_notification_type dnt
+where dnt.title <> 'telemedicine')
+order by fnt.send_date  desc
+
+
+
+
+
+
+
+
+
+
