@@ -58,6 +58,8 @@ where fud.device_guid = '6a21c93e-c0e5-49d0-a6a3-5fea2e51e1f6' and fu.patient_id
        and fn.notification_type_id in (select dnt.id from d_notification_type dnt
 where dnt.title <> 'telemedicine')
 order by fnt.send_date  desc
+4)select * from f_notification_task fnt where  now() >=  fnt.send_date + INTERVAL '2 months'
+     and (status = 'CREATE' or status = 'CREATE_SILENT')
 
 
 
