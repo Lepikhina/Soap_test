@@ -2766,21 +2766,18 @@ def getAssignmentsReferralsInfo = slurperJson.parseText(getAssignmentsReferralsI
 def getAssignmentsInfoSAOResponse = context.expand('${getAssignmentsInfo#Response}')
 getAssignmentsInfoSAO = new XmlSlurper().parseText(getAssignmentsInfoSAOResponse)
 
-countInfo=getAssignmentsReferralsInfo.payload.arInfo.assignments.items.size()
-
-assigmentsCount=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment.size()
+def countInfo=getAssignmentsReferralsInfo.payload.arInfo.assignments.items.size()
+def assigmentsCount=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment.size()
 
 checkParameter("count", assigmentsCount, countInfo)
 
-assigmentsINFO=getAssignmentsReferralsInfo.payload.arInfo.assignments.items
-
-assigmentsSAO=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment
+def assigmentsINFO=getAssignmentsReferralsInfo.payload.arInfo.assignments.items
+def assigmentsSAO=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment
 
 assigmentsSAO.sort {it.period.dateTo} // ментод принимает на вход лямбду в фигурных скобках. лябда - это функция которую можно передать в аргументы функции
 // в данной ситуации в лямбде  передается функция которая указывает как происходит сортировка по какому полю так можно сказать
 // it это над кем вызывается функция. В данной ситуации у нас массив ассайментов и вот эта функция вызывается над каждым асайментом и в итоге сортирует массв
 
-log.info  assigmentsSAO.getClass()
 
 for (int i=1; i&lt;assigmentsINFO.size(); i++){
 	if(assigmentsINFO[i-1].period.dateTo> assigmentsINFO[i].period.dateTo){
@@ -2788,37 +2785,39 @@ for (int i=1; i&lt;assigmentsINFO.size(); i++){
 	}
 }
 
-assert assigmentsINFO.size() ==assigmentsSAO.size()
+checkParameter("sizeAssigments", assigmentsINFO.size(),assigmentsSAO.size())
 
 for (int i=0; i&lt;assigmentsINFO.size(); i++){
 	def assigmentSAO=assigmentsSAO[i]// текущий ассаймент из хмл всевсе все взяли из хмл (что внутри ассаймента)
 	def assigmentINFO=assigmentsINFO[i]// текущий ассайент из джейсона
-	appointmentIdINFO=assigmentINFO.appointmentId? assigmentINFO.appointmentId : null// тернаный оператор. если assigmentINFO.appointmentId не нулл то берем  assigmentINFO.appointmentId иначеnull 
-	appointmentIdSAO=assigmentSAO.appointmentId? assigmentSAO.appointmentId.toLong() : null// здест  тернарный оператор действительно имеет смысл потому что надо вызвать тулонг только есть поле не нулл
-	log.info assigmentINFO.moId
-	log.info assigmentSAO.moId
-	assert assigmentINFO.moId==assigmentSAO.moId.toLong()
-	assert assigmentINFO.toBM.id==assigmentSAO.toBM.id.toLong()
-	assert assigmentINFO.toBM.name==assigmentSAO.toBM.name.toString()
-	assert assigmentINFO.toBM.self==assigmentSAO.toBM.self.toBoolean()
-	assert appointmentIdINFO==appointmentIdSAO
+	def appointmentIdINFO=assigmentINFO.appointmentId? assigmentINFO.appointmentId : null// тернаный оператор. если assigmentINFO.appointmentId не нулл то берем  assigmentINFO.appointmentId иначеnull 
+	def appointmentIdSAO=assigmentSAO.appointmentId? assigmentSAO.appointmentId.toLong() : null// здест  тернарный оператор действительно имеет смысл потому что надо вызвать тулонг только есть поле не нулл
 	
+	checkParameter("moid", assigmentSAO.moId.toLong(), assigmentINFO.moId)
+	checkParameter("toBM.id", assigmentSAO.toBM.id.toLong(), assigmentINFO.toBM.id)
+	checkParameter("toBM.name", assigmentSAO.toBM.name.toString(), assigmentINFO.toBM.name)
+	checkParameter("toBM.self", assigmentSAO.toBM.self.toBoolean(), assigmentINFO.toBM.self)
+	checkParameter("appointmentId", appointmentIdSAO, appointmentIdINFO)
+	checkParameter("appointmentId", appointmentIdSAO, appointmentIdINFO)
+
 	def registryEntriesINFO=assigmentINFO.registryEntry
 	def registryEntriesSAO=assigmentSAO.registryEntry
 	
-	assert registryEntriesINFO.size() ==registryEntriesSAO.size() 
+	checkParameter("sizeRegistryEntries", registryEntriesSAO.size(),  registryEntriesINFO.size())
 	
 	for (int m=0; m&lt;registryEntriesSAO.size(); m++){
-		registryEntryINFO=registryEntriesINFO[m]
-		registryEntrySAO=registryEntriesSAO[m]
-		log.info  registryEntryINFO.entryId
-		assert registryEntryINFO.entryId==registryEntrySAO.entryId.toLong()
-		assert registryEntryINFO.laboratoryId==registryEntrySAO.laboratoryId.toLong()
-		assert registryEntryINFO.laboratoryName==registryEntrySAO.laboratoryName.toString()
-		assert registryEntryINFO.biomaterialId==registryEntrySAO.biomaterialId.toLong()
-		assert registryEntryINFO.biomaterialName==registryEntrySAO.biomaterialName.toString()
-		assert registryEntryINFO.hasMemo==registryEntrySAO.hasMemo.toBoolean()
+		def registryEntryINFO=registryEntriesINFO[m]
+		def registryEntrySAO=registryEntriesSAO[m]
+		//log.info " жду " + registryEntrySAO.entryId.toLong()+ " получаю "  + registryEntryINFO.entryId
+		checkParameter("entryId", registryEntrySAO.entryId.toLong(), registryEntryINFO.entryId)
+		checkParameter("laboratoryId", registryEntrySAO.laboratoryId.toLong(), registryEntryINFO.laboratoryId)
+		checkParameter("laboratoryName", registryEntrySAO.laboratoryName.toString(), registryEntryINFO.laboratoryName)
+		checkParameter("biomaterialId", registryEntrySAO.biomaterialId.toLong(), registryEntryINFO.biomaterialId)
+		checkParameter("biomaterialName", registryEntrySAO.biomaterialName.toString(), registryEntryINFO.biomaterialName)
+		checkParameter("hasMemo", registryEntrySAO.hasMemo.toBoolean(), registryEntryINFO.hasMemo)
 	}
+
+	
 }
 
 </script></con:config></con:testStep><con:testStep type="groovy" name="Проверить маппинг refferal" id="ae81a0ad-c147-426e-8f8b-4059bc8f5aff"><con:settings/><con:config><script>import groovy.json.JsonSlurper
@@ -2923,7 +2922,7 @@ for (int i=0; i&lt;countInfo; i++){
 }
 
 log.info "end."
-</script></con:config></con:testStep><con:properties><con:property><con:name>omsNumber</con:name><con:value>7700007178231039</con:value></con:property><con:property><con:name>birthDate</con:name><con:value>1939-10-23</con:value></con:property></con:properties></con:testCase><con:testCase id="c76f2cb4-a693-44b7-bf12-4c49e6511f16" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="448304_АС1. Сервис ЕМИАС.Самозапись.Оркестратор вернул ошибку 500. Ошибка getReferralsInfo" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getAssignmentsReferralsInfo" id="8a84af19-86cd-4556-bd85-381847a93f5f"><con:settings/><con:config service="http://application-emiasinfo1.dev-emias.emias.ru" resourcePath="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAssignmentsReferralsInfo" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request/><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="edeaae88-4cbf-4d39-b8f8-6d1676b57995" name="Valid HTTP Status Codes =200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="15b1690a-c076-4a25-90e2-f078319a3651" name="code=SA_SERVER_ERROR"><con:configuration><path>$.payload.arInfo.referrals.error.code</path><content>SA_SERVER_ERROR</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="d448913b-9412-4caa-ab6b-d4f4295080f1" name="description = Сервис Самозапись.Оркестратор не отвечает"><con:configuration><path>$.payload.arInfo.referrals.error.description</path><content>Сервис Самозапись.Оркестратор не отвечает</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="fe95c7c5-4e65-4c77-a5bb-dd13f2251a4a" name="type=TECHNICAL"><con:configuration><path>$.payload.arInfo.referrals.error.type</path><content>TECHNICAL</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="51cad66e-05a2-4476-8d59-df830421c75a" name="redderal.items пустой"><con:configuration><path>$.payload.arInfo.referrals.items</path><content>[]</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="58f6ef0e-ba90-44b4-adb3-70d8c0963240" name="JsonPath Count. assignments.items=1"><con:configuration><path>$.payload.arInfo.assignments.items</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+</script></con:config></con:testStep><con:properties><con:property><con:name>omsNumber</con:name><con:value>7757330889000627</con:value></con:property><con:property><con:name>birthDate</con:name><con:value>1966-02-10</con:value></con:property></con:properties></con:testCase><con:testCase id="c76f2cb4-a693-44b7-bf12-4c49e6511f16" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="448304_АС1. Сервис ЕМИАС.Самозапись.Оркестратор вернул ошибку 500. Ошибка getReferralsInfo" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getAssignmentsReferralsInfo" id="8a84af19-86cd-4556-bd85-381847a93f5f"><con:settings/><con:config service="http://application-emiasinfo1.dev-emias.emias.ru" resourcePath="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAssignmentsReferralsInfo" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request/><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="edeaae88-4cbf-4d39-b8f8-6d1676b57995" name="Valid HTTP Status Codes =200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="15b1690a-c076-4a25-90e2-f078319a3651" name="code=SA_SERVER_ERROR"><con:configuration><path>$.payload.arInfo.referrals.error.code</path><content>SA_SERVER_ERROR</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="d448913b-9412-4caa-ab6b-d4f4295080f1" name="description = Сервис Самозапись.Оркестратор не отвечает"><con:configuration><path>$.payload.arInfo.referrals.error.description</path><content>Сервис Самозапись.Оркестратор не отвечает</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="fe95c7c5-4e65-4c77-a5bb-dd13f2251a4a" name="type=TECHNICAL"><con:configuration><path>$.payload.arInfo.referrals.error.type</path><content>TECHNICAL</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="51cad66e-05a2-4476-8d59-df830421c75a" name="redderal.items пустой"><con:configuration><path>$.payload.arInfo.referrals.items</path><content>[]</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="58f6ef0e-ba90-44b4-adb3-70d8c0963240" name="JsonPath Count. assignments.items=1"><con:configuration><path>$.payload.arInfo.assignments.items</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
   <con:entry key="Mock-saOrchestrator" value="${#Project#Mock}/448304"/>
   <con:entry key="omsNumber" value="${#TestCase#omsNumber}"/>
   <con:entry key="birthDate" value="${#TestCase#birthDate}"/>
