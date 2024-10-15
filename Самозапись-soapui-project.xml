@@ -1,0 +1,2930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c0c4617d-63d2-497d-a622-784d8a490a49" activeEnvironment="Default" name="Самозапись. МОЙ ТЕСТ" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="d485db65-d7bc-4737-a155-676b0fe80f25" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://application-emiasinfo1.dev-emias.emias.ru" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://application-emiasinfo1.dev-emias.emias.ru</con:endpoint></con:endpoints><con:resource name="" path="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" id="c974b0a1-b4d0-4d99-b372-05dcc44cb4b5"><con:settings/><con:parameters><con:parameter><con:name>omsNumber</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>birthDate</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>Mock-saOrchestrator</con:name><con:style>HEADER</con:style></con:parameter></con:parameters><con:method name="1" id="69c78538-7c4d-42de-a0b9-69509fbfc447" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>500 400</con:status><con:params/><con:element xmlns:get="http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo">get:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:get="http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo">get:Response</con:element></con:representation><con:request name="Request 1" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://application-emiasinfo1.dev-emias.emias.ru</con:endpoint><con:request/><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="omsNumber" value="7700007178231039"/>
+  <con:entry key="birthDate" value="1939-10-23"/>
+</con:parameters><con:parameterOrder><con:entry>omsNumber</con:entry><con:entry>birthDate</con:entry><con:entry>Mock-saOrchestrator</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:WsdlInterface" id="f83b2522-ebbe-413b-b133-b9f9d929a320" wsaVersion="NONE" name="SelfAppointmentServiceV5Binding" type="wsdl" bindingName="{http://impl.service.soap.emias.lanit.ru/v5/}SelfAppointmentServiceV5Binding" soapVersion="1_2" anonymous="optional" definition="http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?wsdl"><con:part><con:url>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SelfAppointmentService" targetNamespace="http://impl.service.soap.emias.lanit.ru/v5/" xmlns:api="http://api.service.soap.emias.lanit.ru/v5/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://impl.service.soap.emias.lanit.ru/v5/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL контракта 5 (доработки по записи 2-х детей, для Инфомата и поддержки ЦЛС)-->
+  <wsdl:documentation>version="5.2"</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://api.service.soap.emias.lanit.ru/v5/" schemaLocation="http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?xsd=AAAADHAjUCM4P2cuZURELvH8olfvFUzUOzR9Es_rBviwyrRrnxXTOMZf1KYWzL6hlqv_eyPYq5HlejT1ROkMeQ--"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="SoapException">
+    <wsdl:part element="api:soapException" name="SoapException"/>
+  </wsdl:message>
+  <wsdl:message name="cancelAppointment">
+    <wsdl:part element="api:cancelAppointment" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cancelAppointmentResponse">
+    <wsdl:part element="api:cancelAppointmentResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getAppointmentReceptionsByPatient">
+    <wsdl:part element="api:getAppointmentReceptionsByPatient" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getAppointmentReceptionsByPatientResponse">
+    <wsdl:part element="api:getAppointmentReceptionsByPatientResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getReferralsInfo">
+    <wsdl:part element="api:getReferralsInfo" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getReferralsInfoResponse">
+    <wsdl:part element="api:getReferralsInfoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createAppointment">
+    <wsdl:part element="api:createAppointment" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createAppointmentResponse">
+    <wsdl:part element="api:createAppointmentResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getAvailableResourceScheduleInfo">
+    <wsdl:part element="api:getAvailableResourceScheduleInfo" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getAvailableResourceScheduleInfoResponse">
+    <wsdl:part element="api:getAvailableResourceScheduleInfoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getDoctorsInfo">
+    <wsdl:part element="api:getDoctorsInfo" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getDoctorsInfoResponse">
+    <wsdl:part element="api:getDoctorsInfoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getSpecialitiesInfo">
+    <wsdl:part element="api:getSpecialitiesInfo" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getSpecialitiesInfoResponse">
+    <wsdl:part element="api:getSpecialitiesInfoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getLpusForSpeciality">
+    <wsdl:part element="api:getLpusForSpeciality" name="getLpusForSpeciality"/>
+  </wsdl:message>
+  <wsdl:message name="getLpusForSpecialityResponse">
+    <wsdl:part element="api:getLpusForSpecialityResponse" name="getLpusForSpecialityResponse"/>
+  </wsdl:message>
+  <wsdl:message name="shiftAppointment">
+    <wsdl:part element="api:shiftAppointment" name="shiftAppointment"/>
+  </wsdl:message>
+  <wsdl:message name="shiftAppointmentResponse">
+    <wsdl:part element="api:shiftAppointmentResponse" name="shiftAppointmentResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getDutyARScheduleByPatient">
+    <wsdl:part element="api:getDutyARScheduleByPatient" name="getDutyARScheduleByPatient"/>
+  </wsdl:message>
+  <wsdl:message name="getDutyARScheduleByPatientResponse">
+    <wsdl:part element="api:getDutyARScheduleByPatientResponse" name="getDutyARScheduleByPatientResponse"/>
+  </wsdl:message>
+  <wsdl:message name="createAppointmentToDutyDoctorByPatient">
+    <wsdl:part element="api:createAppointmentToDutyDoctorByPatient" name="createAppointmentToDutyDoctorByPatient"/>
+  </wsdl:message>
+  <wsdl:message name="createAppointmentToDutyDoctorByPatientResponse">
+    <wsdl:part element="api:createAppointmentToDutyDoctorByPatientResponse" name="createAppointmentToDutyDoctorByPatientResponse"/>
+  </wsdl:message>
+  <wsdl:message name="cancelAppointmentToDutyDoctorByPatient">
+    <wsdl:part element="api:cancelAppointmentToDutyDoctorByPatient" name="cancelAppointmentToDutyDoctorByPatient"/>
+  </wsdl:message>
+  <wsdl:message name="cancelAppointmentToDutyDoctorByPatientResponse">
+    <wsdl:part element="api:cancelAppointmentToDutyDoctorByPatientResponse" name="cancelAppointmentToDutyDoctorByPatientResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getHealthCareAvailabilityAttributes">
+    <wsdl:part element="api:getHealthCareAvailabilityAttributes" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="getHealthCareAvailabilityAttributesResponse">
+    <wsdl:part element="api:getHealthCareAvailabilityAttributesResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cancelAppointmentBySms">
+    <wsdl:part element="api:cancelAppointmentBySms" name="cancelAppointmentBySms"/>
+  </wsdl:message>
+  <wsdl:message name="cancelAppointmentBySmsResponse">
+    <wsdl:part element="api:cancelAppointmentBySmsResponse" name="cancelAppointmentBySmsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="cancelAppointmentByID">
+    <wsdl:part element="api:cancelAppointmentByID" name="cancelAppointmentByID"/>
+  </wsdl:message>
+  <wsdl:message name="cancelAppointmentByIDResponse">
+    <wsdl:part element="api:cancelAppointmentByIDResponse" name="cancelAppointmentByIDResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAssignmentsInfo">
+    <wsdl:part element="api:getAssignmentsInfo" name="getAssignmentsInfo"/>
+  </wsdl:message>
+  <wsdl:message name="getAssignmentsInfoResponse">
+    <wsdl:part element="api:getAssignmentsInfoResponse" name="getAssignmentsInfoResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getDoctorsInfoForLI">
+    <wsdl:part element="api:getDoctorsInfoForLI" name="getDoctorsInfoForLI"/>
+  </wsdl:message>
+  <wsdl:message name="getDoctorsInfoForLIResponse">
+    <wsdl:part element="api:getDoctorsInfoForLIResponse" name="getDoctorsInfoForLIResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getSpecialitiesInfoForGroup">
+    <wsdl:part element="api:getSpecialitiesInfoForGroup" name="getSpecialitiesInfoForGroup"/>
+  </wsdl:message>
+  <wsdl:message name="getSpecialitiesInfoForGroupResponse">
+    <wsdl:part element="api:getSpecialitiesInfoForGroupResponse" name="getSpecialitiesInfoForGroupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getDoctorsInfoForGroup">
+    <wsdl:part element="api:getDoctorsInfoForGroup" name="getDoctorsInfoForGroup"/>
+  </wsdl:message>
+  <wsdl:message name="getDoctorsInfoForGroupResponse">
+    <wsdl:part element="api:getDoctorsInfoForGroupResponse" name="getDoctorsInfoForGroupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getAvailableResourceScheduleInfoForGroup">
+    <wsdl:part element="api:getAvailableResourceScheduleInfoForGroup" name="getAvailableResourceScheduleInfoForGroup"/>
+  </wsdl:message>
+  <wsdl:message name="getAvailableResourceScheduleInfoForGroupResponse">
+    <wsdl:part element="api:getAvailableResourceScheduleInfoForGroupResponse" name="getAvailableResourceScheduleInfoForGroupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="createAppointmentForGroup">
+    <wsdl:part element="api:createAppointmentForGroup" name="createAppointmentForGroup"/>
+  </wsdl:message>
+  <wsdl:message name="createAppointmentForGroupResponse">
+    <wsdl:part element="api:createAppointmentForGroupResponse" name="createAppointmentForGroupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="shiftAppointmentForGroup">
+    <wsdl:part element="api:shiftAppointmentForGroup" name="shiftAppointmentForGroup"/>
+  </wsdl:message>
+  <wsdl:message name="shiftAppointmentForGroupResponse">
+    <wsdl:part element="api:shiftAppointmentForGroupResponse" name="shiftAppointmentForGroupResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getArchivedAppointments">
+    <wsdl:part element="api:getArchivedAppointments" name="getArchivedAppointments"/>
+  </wsdl:message>
+  <wsdl:message name="getArchivedAppointmentsResponse">
+    <wsdl:part element="api:getArchivedAppointmentsResponse" name="getArchivedAppointmentsResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="SelfAppointmentServiceV5PT">
+    <wsdl:operation name="getHealthCareAvailabilityAttributes">
+      <wsdl:input message="tns:getHealthCareAvailabilityAttributes" name="getHealthCareAvailabilityAttributes"/>
+      <wsdl:output message="tns:getHealthCareAvailabilityAttributesResponse" name="getHealthCareAvailabilityAttributesResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="createAppointment">
+      <wsdl:input message="tns:createAppointment" name="createAppointment"/>
+      <wsdl:output message="tns:createAppointmentResponse" name="createAppointmentResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableResourceScheduleInfo">
+      <wsdl:input message="tns:getAvailableResourceScheduleInfo" name="getAvailableResourceScheduleInfo"/>
+      <wsdl:output message="tns:getAvailableResourceScheduleInfoResponse" name="getAvailableResourceScheduleInfoResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDoctorsInfo">
+      <wsdl:input message="tns:getDoctorsInfo" name="getDoctorsInfo"/>
+      <wsdl:output message="tns:getDoctorsInfoResponse" name="getDoctorsInfoResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialitiesInfo">
+      <wsdl:input message="tns:getSpecialitiesInfo" name="getSpecialitiesInfo"/>
+      <wsdl:output message="tns:getSpecialitiesInfoResponse" name="getSpecialitiesInfoResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getLpusForSpeciality">
+      <wsdl:input message="tns:getLpusForSpeciality" name="getLpusForSpeciality"/>
+      <wsdl:output message="tns:getLpusForSpecialityResponse" name="getLpusForSpecialityResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="shiftAppointment">
+      <wsdl:input message="tns:shiftAppointment" name="shiftAppointment"/>
+      <wsdl:output message="tns:shiftAppointmentResponse" name="shiftAppointmentResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="cancelAppointment">
+      <wsdl:input message="tns:cancelAppointment" name="cancelAppointment"/>
+      <wsdl:output message="tns:cancelAppointmentResponse" name="cancelAppointmentResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAppointmentReceptionsByPatient">
+      <wsdl:input message="tns:getAppointmentReceptionsByPatient" name="getAppointmentReceptionsByPatient"/>
+      <wsdl:output message="tns:getAppointmentReceptionsByPatientResponse" name="getAppointmentReceptionsByPatientResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getReferralsInfo">
+      <wsdl:input message="tns:getReferralsInfo" name="getReferralsInfo"/>
+      <wsdl:output message="tns:getReferralsInfoResponse" name="getReferralsInfoResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDutyARScheduleByPatient">
+      <wsdl:input message="tns:getDutyARScheduleByPatient" name="getDutyARScheduleByPatient"/>
+      <wsdl:output message="tns:getDutyARScheduleByPatientResponse" name="getDutyARScheduleByPatientResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="createAppointmentToDutyDoctorByPatient">
+      <wsdl:input message="tns:createAppointmentToDutyDoctorByPatient" name="createAppointmentToDutyDoctorByPatient"/>
+      <wsdl:output message="tns:createAppointmentToDutyDoctorByPatientResponse" name="createAppointmentToDutyDoctorByPatientResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="cancelAppointmentToDutyDoctorByPatient">
+      <wsdl:input message="tns:cancelAppointmentToDutyDoctorByPatient" name="cancelAppointmentToDutyDoctorByPatient"/>
+      <wsdl:output message="tns:cancelAppointmentToDutyDoctorByPatientResponse" name="cancelAppointmentToDutyDoctorByPatientResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="cancelAppointmentBySms">
+      <wsdl:input message="tns:cancelAppointmentBySms" name="cancelAppointmentBySms"/>
+      <wsdl:output message="tns:cancelAppointmentBySmsResponse" name="cancelAppointmentBySmsResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="cancelAppointmentByID">
+      <wsdl:input message="tns:cancelAppointmentByID" name="cancelAppointmentByID"/>
+      <wsdl:output message="tns:cancelAppointmentByIDResponse" name="cancelAppointmentByIDResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAssignmentsInfo">
+      <wsdl:input message="tns:getAssignmentsInfo" name="getAssignmentsInfo"/>
+      <wsdl:output message="tns:getAssignmentsInfoResponse" name="getAssignmentsInfoResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDoctorsInfoForLI">
+      <wsdl:input message="tns:getDoctorsInfoForLI" name="getDoctorsInfoForLI"/>
+      <wsdl:output message="tns:getDoctorsInfoForLIResponse" name="getDoctorsInfoForLIResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialitiesInfoForGroup">
+      <wsdl:input message="tns:getSpecialitiesInfoForGroup" name="getSpecialitiesInfoForGroup"/>
+      <wsdl:output message="tns:getSpecialitiesInfoForGroupResponse" name="getSpecialitiesInfoForGroupResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDoctorsInfoForGroup">
+      <wsdl:input message="tns:getDoctorsInfoForGroup" name="getDoctorsInfoForGroup"/>
+      <wsdl:output message="tns:getDoctorsInfoForGroupResponse" name="getDoctorsInfoForGroupResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableResourceScheduleInfoForGroup">
+      <wsdl:input message="tns:getAvailableResourceScheduleInfoForGroup" name="getAvailableResourceScheduleInfoForGroup"/>
+      <wsdl:output message="tns:getAvailableResourceScheduleInfoForGroupResponse" name="getAvailableResourceScheduleInfoForGroupResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="createAppointmentForGroup">
+      <wsdl:input message="tns:createAppointmentForGroup" name="createAppointmentForGroup"/>
+      <wsdl:output message="tns:createAppointmentForGroupResponse" name="createAppointmentForGroupResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="shiftAppointmentForGroup">
+      <wsdl:input message="tns:shiftAppointmentForGroup" name="shiftAppointmentForGroup"/>
+      <wsdl:output message="tns:shiftAppointmentForGroupResponse" name="shiftAppointmentForGroupResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getArchivedAppointments">
+      <wsdl:input message="tns:getArchivedAppointments" name="getArchivedAppointments"/>
+      <wsdl:output message="tns:getArchivedAppointmentsResponse" name="getArchivedAppointmentsResponse"/>
+      <wsdl:fault message="tns:SoapException" name="SoapException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SelfAppointmentServiceV5Binding" type="tns:SelfAppointmentServiceV5PT">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getHealthCareAvailabilityAttributes">
+      <soap12:operation soapAction="urn://getHealthCareAvailabilityAttributes"/>
+      <wsdl:input name="getHealthCareAvailabilityAttributes">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getHealthCareAvailabilityAttributesResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelAppointment">
+      <soap12:operation soapAction="urn://cancelAppointment"/>
+      <wsdl:input name="cancelAppointment">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelAppointmentResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAppointmentReceptionsByPatient">
+      <soap12:operation soapAction="urn://getAppointmentReceptionsByPatient"/>
+      <wsdl:input name="getAppointmentReceptionsByPatient">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAppointmentReceptionsByPatientResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReferralsInfo">
+      <soap12:operation soapAction="urn://getReferralsInfo"/>
+      <wsdl:input name="getReferralsInfo">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getReferralsInfoResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createAppointment">
+      <soap12:operation soapAction="urn://createAppointment"/>
+      <wsdl:input name="createAppointment">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createAppointmentResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableResourceScheduleInfo">
+      <soap12:operation soapAction="urn://getAvailableResourceScheduleInfo"/>
+      <wsdl:input name="getAvailableResourceScheduleInfo">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAvailableResourceScheduleInfoResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDoctorsInfo">
+      <soap12:operation soapAction="urn://getDoctorsInfo"/>
+      <wsdl:input name="getDoctorsInfo">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDoctorsInfoResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDoctorsInfoForLI">
+      <soap12:operation soapAction="urn://getDoctorsInfoForLI"/>
+      <wsdl:input name="getDoctorsInfoForLI">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDoctorsInfoForLIResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialitiesInfo">
+      <soap12:operation soapAction="urn://getSpecialitiesInfo"/>
+      <wsdl:input name="getSpecialitiesInfo">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSpecialitiesInfoResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLpusForSpeciality">
+      <soap12:operation soapAction="urn://getLpusForSpeciality"/>
+      <wsdl:input name="getLpusForSpeciality">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLpusForSpecialityResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="shiftAppointment">
+      <soap12:operation soapAction="urn://shiftAppointment"/>
+      <wsdl:input name="shiftAppointment">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="shiftAppointmentResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDutyARScheduleByPatient">
+      <soap12:operation soapAction="urn://getDutyARScheduleByPatient"/>
+      <wsdl:input name="getDutyARScheduleByPatient">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDutyARScheduleByPatientResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createAppointmentToDutyDoctorByPatient">
+      <soap12:operation soapAction="urn://createAppointmentToDutyDoctorByPatient"/>
+      <wsdl:input name="createAppointmentToDutyDoctorByPatient">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createAppointmentToDutyDoctorByPatientResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelAppointmentToDutyDoctorByPatient">
+      <soap12:operation soapAction="urn://cancelAppointmentToDutyDoctorByPatient"/>
+      <wsdl:input name="cancelAppointmentToDutyDoctorByPatient">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelAppointmentToDutyDoctorByPatientResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelAppointmentBySms">
+      <soap12:operation soapAction="urn://cancelAppointmentBySms"/>
+      <wsdl:input name="cancelAppointmentBySms">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelAppointmentBySmsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelAppointmentByID">
+      <soap12:operation soapAction="urn://cancelAppointmentByID"/>
+      <wsdl:input name="cancelAppointmentByID">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cancelAppointmentByIDResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAssignmentsInfo">
+      <soap12:operation soapAction="urn://getAssignmentsInfo"/>
+      <wsdl:input name="getAssignmentsInfo">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssignmentsInfoResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSpecialitiesInfoForGroup">
+      <soap12:operation soapAction="urn://getSpecialitiesInfoForGroup"/>
+      <wsdl:input name="getSpecialitiesInfoForGroup">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSpecialitiesInfoForGroupResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDoctorsInfoForGroup">
+      <soap12:operation soapAction="urn://getDoctorsInfoForGroup"/>
+      <wsdl:input name="getDoctorsInfoForGroup">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDoctorsInfoForGroupResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableResourceScheduleInfoForGroup">
+      <soap12:operation soapAction="urn://getAvailableResourceScheduleInfoForGroup"/>
+      <wsdl:input name="getAvailableResourceScheduleInfoForGroup">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAvailableResourceScheduleInfoForGroupResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createAppointmentForGroup">
+      <soap12:operation soapAction="urn://createAppointmentForGroup"/>
+      <wsdl:input name="createAppointmentForGroup">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createAppointmentForGroupResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="shiftAppointmentForGroup">
+      <soap12:operation soapAction="urn://shiftAppointmentForGroup"/>
+      <wsdl:input name="shiftAppointmentForGroup">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="shiftAppointmentForGroupResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getArchivedAppointments">
+      <soap12:operation soapAction="urn://getArchivedAppointments"/>
+      <wsdl:input name="getArchivedAppointments">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getArchivedAppointmentsResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SoapException">
+        <soap12:fault name="SoapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SelfAppointmentServiceV5">
+    <wsdl:port binding="tns:SelfAppointmentServiceV5Binding" name="SelfAppointmentServiceV5PTB">
+      <soap12:address location="http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?xsd=AAAADHAjUCM4P2cuZURELvH8olfvFUzUOzR9Es_rBviwyrRrnxXTOMZf1KYWzL6hlqv_eyPYq5HlejT1ROkMeQ--</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://api.service.soap.emias.lanit.ru/v5/" version="5.2" xmlns:core="http://api.service.soap.emias.lanit.ru/core/v5/" xmlns:ns1="http://api.service.soap.emias.lanit.ru/v5/" xmlns:tns="http://api.service.soap.emias.lanit.ru/v5/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://api.service.soap.emias.lanit.ru/core/v5/" schemaLocation="http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?xsd=AAAADHAjUCM4P2cuZURELs3rrVnLFkjJMy5mDfngAN2826cviAmOKcwB0rpK0eO9luhxWIPHWt9l0e4P44rDtQmP"/>
+  <!--======================== Элементы =====================================-->
+  <!--Отмена записи на прием-->
+  <xs:element name="cancelAppointment" type="tns:cancelAppointment"/>
+  <xs:element name="cancelAppointmentResponse" type="tns:cancelAppointmentResponse"/>
+  <!--Создание записи на прием2-->
+  <xs:element name="createAppointment" type="tns:createAppointment"/>
+  <xs:element name="createAppointmentResponse" type="tns:createAppointmentResponse"/>
+  <!--Получение списка записей для пациента-->
+  <xs:element name="getAppointmentReceptionsByPatient" type="tns:getAppointmentReceptionsByPatient"/>
+  <xs:element name="getAppointmentReceptionsByPatientResponse" type="tns:getAppointmentReceptionsByPatientResponse"/>
+  <!--Получение расписания врача-->
+  <xs:element name="getAvailableResourceScheduleInfo" type="tns:getAvailableResourceScheduleInfo"/>
+  <xs:element name="getAvailableResourceScheduleInfoResponse" type="tns:getAvailableResourceScheduleInfoResponse"/>
+  <!--Получение списка врачей-->
+  <xs:element name="getDoctorsInfo" type="tns:getDoctorsInfo"/>
+  <xs:element name="getDoctorsInfoResponse" type="tns:getDoctorsInfoResponse"/>
+  <!--Получение направлений для пациента-->
+  <xs:element name="getReferralsInfo" type="tns:getReferralsInfo"/>
+  <xs:element name="getReferralsInfoResponse" type="tns:getReferralsInfoResponse"/>
+  <!--Получение списка специальностей-->
+  <xs:element name="getSpecialitiesInfo" type="tns:getSpecialitiesInfo"/>
+  <xs:element name="getSpecialitiesInfoResponse" type="tns:getSpecialitiesInfoResponse"/>
+  <!--Предоставление перечня ЛПУ для вакцинации-->
+  <xs:element name="getLpusForSpeciality" type="tns:getLpusForSpeciality"/>
+  <xs:element name="getLpusForSpecialityResponse" type="tns:getLpusForSpecialityResponse"/>
+  <!--Перенос записи на прием-->
+  <xs:element name="shiftAppointment" type="tns:shiftAppointment"/>
+  <xs:element name="shiftAppointmentResponse" type="tns:shiftAppointmentResponse"/>
+  <!--Предоставление расписания ближайшего доступного ДВ-->
+  <xs:element name="getDutyARScheduleByPatient" type="tns:getDutyARScheduleByPatient"/>
+  <xs:element name="getDutyARScheduleByPatientResponse" type="tns:getDutyARScheduleByPatientResponse"/>
+  <!--Создание записи к ДВ-->
+  <xs:element name="createAppointmentToDutyDoctorByPatient" type="tns:createAppointmentToDutyDoctorByPatient"/>
+  <xs:element name="createAppointmentToDutyDoctorByPatientResponse" type="tns:createAppointmentToDutyDoctorByPatientResponse"/>
+  <!--Отмена записи к ДВ-->
+  <xs:element name="cancelAppointmentToDutyDoctorByPatient" type="tns:cancelAppointmentToDutyDoctorByPatient"/>
+  <xs:element name="cancelAppointmentToDutyDoctorByPatientResponse" type="tns:cancelAppointmentToDutyDoctorByPatientResponse"/>
+  <!--Предоставление ожидания по самозаписи-->
+  <xs:element name="getHealthCareAvailabilityAttributes" type="tns:getHealthCareAvailabilityAttributes"/>
+  <xs:element name="getHealthCareAvailabilityAttributesResponse" type="tns:getHealthCareAvailabilityAttributesResponse"/>
+  <!--Отмена записи к ДВ-->
+  <xs:element name="cancelAppointmentBySms" type="tns:cancelAppointmentBySms"/>
+  <xs:element name="cancelAppointmentBySmsResponse" type="tns:cancelAppointmentBySmsResponse"/>
+  <!--Отмена записи на прием (вариант 2, для ЦТО)-->
+  <xs:element name="cancelAppointmentByID" type="tns:cancelAppointmentByID"/>
+  <xs:element name="cancelAppointmentByIDResponse" type="tns:cancelAppointmentByIDResponse"/>
+  <!--Предоставление перечня активных назначений пациента на ЛИ-->
+  <xs:element name="getAssignmentsInfo" type="tns:getAssignmentsInfo"/>
+  <xs:element name="getAssignmentsInfoResponse" type="tns:getAssignmentsInfoResponse"/>
+  <!--Получение ДР на лабораторные исследования-->
+  <xs:element name="getDoctorsInfoForLI" type="tns:getDoctorsInfoForLI"/>
+  <xs:element name="getDoctorsInfoForLIResponse" type="tns:getDoctorsInfoForLIResponse"/>
+  <!--Предоставление перечня специальностей доступных для самозаписи группой пациентов-->
+  <xs:element name="getSpecialitiesInfoForGroup" type="tns:getSpecialitiesInfoForGroup"/>
+  <xs:element name="getSpecialitiesInfoForGroupResponse" type="tns:getSpecialitiesInfoForGroupResponse"/>
+  <!--Предоставление перечня ДР, к которым разрешена самозапись пациента-->
+  <xs:element name="getDoctorsInfoForGroup" type="tns:getDoctorsInfoForGroup"/>
+  <xs:element name="getDoctorsInfoForGroupResponse" type="tns:getDoctorsInfoForGroupResponse"/>
+  <!--Предоставление расписания доступного ресурса и его слотов, доступных для самозаписи группе пациентов-->
+  <xs:element name="getAvailableResourceScheduleInfoForGroup" type="tns:getAvailableResourceScheduleInfoForGroup"/>
+  <xs:element name="getAvailableResourceScheduleInfoForGroupResponse" type="tns:getAvailableResourceScheduleInfoForGroupResponse"/>
+  <!--Создание несколько записей-->
+  <xs:element name="createAppointmentForGroup" type="tns:createAppointmentForGroup"/>
+  <xs:element name="createAppointmentForGroupResponse" type="tns:createAppointmentForGroupResponse"/>
+  <!--Перенос нескольких записей-->
+  <xs:element name="shiftAppointmentForGroup" type="tns:shiftAppointmentForGroup"/>
+  <xs:element name="shiftAppointmentForGroupResponse" type="tns:shiftAppointmentForGroupResponse"/>
+  <!--Получение отмененных и архивных записей пациента-->
+  <xs:element name="getArchivedAppointments" type="tns:getArchivedAppointments"/>
+  <xs:element name="getArchivedAppointmentsResponse" type="tns:getArchivedAppointmentsResponse"/>
+  <!--======================== Ошибки =====================================-->
+  <xs:element name="soapException" nillable="false" type="tns:soapException"/>
+  <xs:element name="appointmentCodeErrorFaultInfo" type="tns:appointmentCodeErrorFaultInfo"/>
+  <!--======================== Типы данных =====================================-->
+  <xs:complexType name="availableResourceBasis">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="referralId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Идентификатор направления, по которому осуществлялся подбор ДР</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="medSpecialityAttachment" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Признак записи по прикреплению к специальности</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="specialityId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД специализации ДР, по которой осуществлялся подбор ДР</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ldpId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД вида ЛДП</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="samplingTypeId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>Профиль взятия</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="referralType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="REF_TO_DOCTOR"/>
+      <xs:enumeration value="REF_TO_LDP"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="signActiveArchiveType">
+    <xs:annotation>
+      <xs:documentation>Признак «Архивные и отмененные записи»</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:long">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="baseDto">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="ldpType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string"/>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="procedure" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="investigation" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lpuType">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="ambulatory" type="xs:string"/>
+      <xs:element minOccurs="0" name="patientSign" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="referral">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="number" type="xs:string"/>
+      <xs:element minOccurs="0" name="comment" type="xs:string"/>
+      <xs:element name="startTime" type="xs:date"/>
+      <xs:element name="endTime" type="xs:date"/>
+      <xs:element minOccurs="0" name="type" type="xs:string"/>
+      <xs:element minOccurs="0" name="lpuId" type="xs:long"/>
+      <xs:element minOccurs="0" name="lpuType" type="xs:string"/>
+      <xs:element minOccurs="0" name="lpuName" type="xs:string"/>
+      <xs:element minOccurs="0" name="availableResourceId" type="xs:long"/>
+      <xs:element minOccurs="0" name="toDoctor" type="tns:toDoctor"/>
+      <xs:element minOccurs="0" name="toLdp" type="tns:toLdp"/>
+      <xs:element minOccurs="0" name="diagnosis" type="tns:diagnosis">
+        <xs:annotation>
+          <xs:documentation>Информация о диагнозе</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="issuedDoctor" type="tns:jobInfo">
+        <xs:annotation>
+          <xs:documentation>Информация о враче, выдавшем направление/назначение</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="appointmentOpenDate" type="xs:date"/>
+      <xs:element name="countActiveAppointment" type="xs:int"/>
+      <xs:element name="countAppointmentWithReceptionFact" type="xs:int"/>
+      <xs:element minOccurs="0" name="invalid" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="referralDesc">
+    <xs:sequence>
+      <xs:element name="referralId" type="xs:long"/>
+      <xs:element name="startTime" type="xs:date"/>
+      <xs:element name="endTime" type="xs:date"/>
+      <xs:element minOccurs="0" name="availableResourceId" type="xs:long"/>
+      <xs:element minOccurs="0" name="lpuId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="appointmentDesc">
+    <xs:sequence>
+      <xs:element name="appointmentId" type="xs:long"/>
+      <xs:element name="appointmentNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="patient" type="tns:patientShort"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="scheduleOfDay">
+    <xs:sequence>
+      <xs:element name="date" type="xs:date"/>
+      <xs:element maxOccurs="unbounded" name="scheduleBySlot" type="tns:scheduleBySlot"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="medicalSpeciality">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="male" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="female" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="areaType" type="xs:string"/>
+      <xs:element minOccurs="0" name="onlyByRefferal" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="therapeutic" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="ignoreAttachment" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="paid" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="toDoctor">
+    <xs:sequence>
+      <xs:element name="specialityId" type="xs:long"/>
+      <xs:element name="specialityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="doctorFio" type="xs:string"/>
+      <xs:element name="receptionTypeId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="toLdp">
+    <xs:sequence>
+      <xs:element name="ldpTypeId" type="xs:long"/>
+      <xs:element name="ldpTypeName" type="xs:string"/>
+      <xs:element minOccurs="0" name="countAssignmentProcedures" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="diagnosis">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Код по МКБ-10</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Наименование диагноза</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="jobInfo">
+    <xs:sequence>
+      <xs:element name="jobExecutionId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД_Исполнение должности</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="fio" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Фамилия Имя Отчество</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="snils" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>СНИЛС</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="specialityId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД_Специальность</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="specialityName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Наименование специальности</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="appointmentReception">
+    <xs:sequence>
+      <xs:element name="appointmentId" type="xs:long"/>
+      <xs:element minOccurs="0" name="appointmentNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="appointment">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="number" type="xs:string"/>
+      <xs:element minOccurs="0" name="liveQueueTicketId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД талона в ЖО</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="liveQueueTicketNumber" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Номер талона в ЖО</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="lpuId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД ЛПУ</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="typeLpu" type="xs:string"/>
+      <xs:element name="nameLpu" type="xs:string"/>
+      <xs:element name="lpuAddress" type="xs:string"/>
+      <xs:element name="startTime" type="xs:dateTime"/>
+      <xs:element name="endTime" type="xs:dateTime"/>
+      <xs:element name="type" type="xs:string"/>
+      <xs:element minOccurs="0" name="enableCancel" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="enableShift" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Разрешен ли перенос</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="availableResourceId" type="xs:long"/>
+      <xs:element name="complexResourceId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД КР</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="roomId" type="xs:long"/>
+      <xs:element minOccurs="0" name="roomNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="addressPointId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД Адресной точки кабинета</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="toDoctor" type="tns:toDoctor"/>
+      <xs:element minOccurs="0" name="toLdp" type="tns:toLdp"/>
+      <xs:element minOccurs="0" name="toBM" type="ns1:SamplingType"/>
+      <xs:element name="statusId" type="xs:int"/>
+      <xs:element minOccurs="0" name="cancelInfo" type="ns1:cancelInfo"/>
+      <xs:element minOccurs="0" name="receptionFactId" type="xs:long"/>
+      <xs:element minOccurs="0" name="referral" type="tns:referralDesc">
+        <xs:annotation>
+          <xs:documentation>Направление</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="eno" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelInfo">
+    <xs:annotation>
+      <xs:documentation>Информация об отмене записи</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="cancelReasonId" type="xs:long"/>
+      <xs:element name="cancelReasonDesc" type="xs:string"/>
+      <xs:element minOccurs="0" name="cancelTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="appointmentReceptionToDoctor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="doctorSpecialityCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="doctorSpeciality" type="xs:string"/>
+      <xs:element minOccurs="0" name="doctorFio" type="xs:string"/>
+      <xs:element minOccurs="0" name="viewReceptionCode" type="xs:string"/>
+      <xs:element minOccurs="0" name="room" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="availableResource">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="lpuId" type="xs:long"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element name="arType" type="xs:int"/>
+      <xs:element minOccurs="0" name="specialityChangeAbility" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="arSpecialityId" type="xs:long"/>
+      <xs:element minOccurs="0" name="arSpecialityName" type="xs:string"/>
+      <xs:element minOccurs="0" name="mainDoctor" type="ns1:mainDoctor"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="receptionType" type="ns1:receptionType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ldpType" type="ns1:ldpTypeForAr"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="samplingType" type="ns1:SamplingType"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="complexResource" type="ns1:complexResource"/>
+      <xs:element default="false" name="district" type="xs:boolean"/>
+      <xs:element default="false" name="replacement" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="nondistrict" type="xs:boolean"/>
+      <xs:element default="false" name="availableByReferral" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DutyARScheduleInfo">
+    <xs:sequence>
+      <xs:element name="startTime" type="xs:time"/>
+      <xs:element name="endTime" type="xs:time"/>
+      <xs:element name="existedLiveQueueTickets" type="xs:int"/>
+      <xs:element name="availableResource" type="tns:availableResource"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ResultCreationAppointmentToDutyDoctor">
+    <xs:sequence>
+      <xs:element name="appointmentDesc" type="tns:appointmentDesc"/>
+      <xs:element name="liveQueueTicketId" type="xs:long"/>
+      <xs:element name="liveQueueTicketNumber" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createAppointment">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element name="availableResourceId" type="xs:long"/>
+      <xs:element name="complexResourceId" type="xs:long"/>
+      <xs:element name="startTime" type="xs:dateTime"/>
+      <xs:element name="endTime" type="xs:dateTime"/>
+      <xs:choice minOccurs="0">
+        <xs:element name="referralId" type="xs:long"/>
+        <xs:element name="receptionTypeId" type="xs:long"/>
+      </xs:choice>
+      <xs:element minOccurs="0" name="complaintId" type="xs:long"/>
+      <xs:element minOccurs="0" name="inquiryPurposeId" type="xs:long"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+      <xs:element minOccurs="0" name="eno" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createAppointmentResponse">
+    <xs:sequence>
+      <xs:element name="appointmentDesc" type="ns1:appointmentDesc"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAppointmentReceptionsByPatient">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+      <xs:element minOccurs="0" name="signActiveArchive" type="tns:signActiveArchiveType"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAppointmentReceptionsByPatientResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="appointment" type="tns:appointment"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAvailableResourceScheduleInfo">
+    <xs:sequence>
+      <xs:element name="availableResourceId" type="xs:long"/>
+      <xs:element minOccurs="0" name="complexResourceId" type="xs:long"/>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element minOccurs="0" name="referralId" type="xs:long"/>
+      <xs:element minOccurs="0" name="period" type="ns1:DatePeriod"/>
+      <xs:element minOccurs="0" name="appointmentId" type="xs:long"/>
+      <xs:element minOccurs="0" name="quotaTypes" type="tns:quotaTypes"/>
+      <xs:element minOccurs="0" name="disableQuotaTypes" type="tns:quotaTypes"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAvailableResourceScheduleInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:availableResourceScheduleBySlots"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDoctorsInfo">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:choice>
+        <xs:element name="appointmentId" type="xs:long"/>
+        <xs:element name="referralId" type="xs:long"/>
+        <xs:element name="specialityId" type="xs:long"/>
+      </xs:choice>
+      <xs:element minOccurs="0" name="lpuId" type="xs:long"/>
+      <xs:element minOccurs="0" name="includeArWithoutSlots" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>По умолчанию - true</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="quotaTypes" type="tns:quotaTypes"/>
+      <xs:element minOccurs="0" name="disableQuotaTypes" type="tns:quotaTypes"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="quotaTypes">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="quotaType" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDoctorsInfoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="availableResource" type="tns:availableResource"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getReferralsInfo">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element default="false" minOccurs="0" name="returnCompleted" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="returnExtended" type="xs:boolean"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getReferralsInfoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="referral" type="tns:referral"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSpecialitiesInfo">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element minOccurs="0" name="quotaTypes" type="tns:quotaTypes"/>
+      <xs:element minOccurs="0" name="disableQuotaTypes" type="tns:quotaTypes"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSpecialitiesInfoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="medicalSpeciality" type="tns:medicalSpeciality"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLpusForSpeciality">
+    <xs:sequence>
+      <xs:element name="omsNumber">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" name="omsSeries">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="6"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element name="specialityId" type="xs:long"/>
+      <xs:element name="externalSystemId">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getLpusForSpecialityResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="lpu" type="tns:lpuInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lpuInfo">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="shortName" type="xs:string"/>
+      <xs:element minOccurs="0" name="priority" type="xs:boolean"/>
+      <xs:element maxOccurs="unbounded" name="address" type="tns:LpuAddressInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LpuAddressInfo">
+    <xs:sequence>
+      <xs:element name="buildingRegistryCode" type="xs:long"/>
+      <xs:element name="addressString" type="xs:string"/>
+      <xs:element minOccurs="0" name="territory" type="tns:District"/>
+      <xs:element minOccurs="0" name="district" type="tns:District"/>
+      <xs:element minOccurs="0" name="coordinates" type="tns:Coordinates"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="metroStation" type="tns:MetroStation"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="District">
+    <xs:sequence>
+      <xs:element name="code" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Coordinates">
+    <xs:sequence>
+      <xs:element name="latitude" type="xs:string"/>
+      <xs:element name="longitude" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MetroStation">
+    <xs:sequence>
+      <xs:element name="station" type="xs:string"/>
+      <xs:element name="line" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="shiftAppointment">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element name="availableResourceId" type="xs:long"/>
+      <xs:element minOccurs="0" name="complexResourceId" type="xs:long"/>
+      <xs:element name="startTime" type="xs:dateTime"/>
+      <xs:element name="endTime" type="xs:dateTime"/>
+      <xs:choice minOccurs="0">
+        <xs:element name="referralId" type="xs:long"/>
+        <xs:element name="receptionTypeId" type="xs:long"/>
+      </xs:choice>
+      <xs:element name="appointmentId" type="xs:long"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="shiftAppointmentResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:appointmentDesc"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelAppointment">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element name="appointmentId" type="xs:long"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelAppointmentResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDutyARScheduleByPatient">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+      <xs:element name="lpuId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDutyARScheduleByPatientResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:DutyARScheduleInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createAppointmentToDutyDoctorByPatient">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+      <xs:element name="lpuId" type="xs:long"/>
+      <xs:element name="availableResourceId" type="xs:long"/>
+      <xs:element name="complexResourceId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createAppointmentToDutyDoctorByPatientResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:ResultCreationAppointmentToDutyDoctor"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelAppointmentToDutyDoctorByPatient">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+      <xs:element name="appointmentId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelAppointmentToDutyDoctorByPatientResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getHealthCareAvailabilityAttributes">
+    <xs:sequence>
+      <xs:element name="patientId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>Идентификатор пациента</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:choice minOccurs="0">
+        <xs:element name="referralId" type="xs:long"/>
+        <xs:element name="specialityId" type="xs:long"/>
+        <xs:element name="ldpId" type="xs:long"/>
+        <xs:element name="samplingTypeId" type="xs:long"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getHealthCareAvailabilityAttributesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="availabilityInfo" type="tns:availabilityInfo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="availabilityInfo">
+    <xs:sequence>
+      <xs:element name="nearestAppointmentDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Дата и время ближайшего свободного талона</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="availableResourceBasis" type="tns:availableResourceBasis">
+        <xs:annotation>
+          <xs:documentation>Группирующая сущность: основание для подбора ДР</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="externalSystemId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>ИД внешней системы, через которую осуществлялся подбор ДР</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="creationDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Дата и время создания записи</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ldpId" type="xs:long"/>
+      <xs:element minOccurs="0" name="nearestMainDoctorDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Дата и время ближайшего свободного талона основного врача</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="nearestReplacementDoctorDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Дата и время ближайшего свободного талона замещающего врача</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelAppointmentBySms">
+    <xs:sequence>
+      <xs:element name="patientPhoneNumber" type="xs:string"/>
+      <xs:element name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelAppointmentBySmsResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelAppointmentByID">
+    <xs:sequence>
+      <xs:element name="appointmentId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelAppointmentByIDResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAssignmentsInfo">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Номер полиса ОМС</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Серия полиса ОМС</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="birthDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Дата рождения пациента</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="false" minOccurs="0" name="returnExtended" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Вернуть расширенную версию направления</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="externalSystemId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Обозначение внешней системы</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAssignmentsInfoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="assignment" type="ns1:AssignmentGroup">
+        <xs:annotation>
+          <xs:documentation>Активные назначения пациента</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDoctorsInfoForLI">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element name="assignment" type="ns1:Assignment">
+        <xs:annotation>
+          <xs:documentation>Назначение</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="appointmentId" type="xs:long"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDoctorsInfoForLIResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="availableResource" type="tns:availableResource"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSpecialitiesInfoForGroup">
+    <xs:sequence>
+      <xs:element maxOccurs="10" minOccurs="2" name="patientGroupEntry" type="tns:patientGroupEntry"/>
+      <xs:element minOccurs="0" name="quotaTypes" type="tns:quotaTypes"/>
+      <xs:element minOccurs="0" name="disableQuotaTypes" type="tns:quotaTypes"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSpecialitiesInfoForGroupResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="medicalSpeciality" type="tns:medicalSpeciality"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDoctorsInfoForGroup">
+    <xs:sequence>
+      <xs:element maxOccurs="10" minOccurs="2" name="patientGroupEntry">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="tns:patientGroupEntry">
+              <xs:sequence>
+                <xs:element minOccurs="0" name="appointmentId" type="xs:long"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="quotaTypes" type="tns:quotaTypes"/>
+      <xs:element minOccurs="0" name="disableQuotaTypes" type="tns:quotaTypes"/>
+      <xs:element name="specialityId" type="xs:long"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getDoctorsInfoForGroupResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="availableResource" type="tns:availableResource"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAvailableResourceScheduleInfoForGroup">
+    <xs:sequence>
+      <xs:element name="availableResourceId" type="xs:long"/>
+      <xs:element maxOccurs="10" minOccurs="2" name="patientGroupEntry">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="tns:patientGroupEntry">
+              <xs:sequence>
+                <xs:element minOccurs="0" name="appointmentId" type="xs:long"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="quotaTypes" type="tns:quotaTypes"/>
+      <xs:element minOccurs="0" name="disableQuotaTypes" type="tns:quotaTypes"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAvailableResourceScheduleInfoForGroupResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:availableResourceScheduleBySlots"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createAppointmentForGroup">
+    <xs:sequence>
+      <xs:element maxOccurs="10" minOccurs="2" name="patientGroupEntry">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="tns:patientGroupEntry">
+              <xs:sequence>
+                <xs:element name="appTime" type="tns:TimeInterval"/>
+                <xs:element name="complexResourceId" type="xs:long"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="availableResourceId" type="xs:long"/>
+      <xs:element name="receptionTypeId" type="xs:long"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="createAppointmentForGroupResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="appointmentDesc" type="ns1:appointmentDesc"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="shiftAppointmentForGroup">
+    <xs:sequence>
+      <xs:element maxOccurs="10" minOccurs="2" name="patientGroupEntry">
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="tns:patientGroupEntry">
+              <xs:sequence>
+                <xs:element name="appTime" type="tns:TimeInterval"/>
+                <xs:element name="complexResourceId" type="xs:long"/>
+                <xs:element name="appointmentId" type="xs:long"/>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="availableResourceId" type="xs:long"/>
+      <xs:element name="receptionTypeId" type="xs:long"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="shiftAppointmentForGroupResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="appointmentDesc" type="tns:appointmentDesc"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getArchivedAppointments">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+      <xs:element minOccurs="0" name="period" type="ns1:DatePeriodOptional"/>
+      <xs:element name="externalSystemId" type="xs:string"/>
+      <xs:element minOccurs="0" name="pagingOptions" type="core:PagingOptions"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getArchivedAppointmentsResponse">
+    <xs:sequence>
+      <xs:element name="result" type="tns:AppointmentListPage"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AppointmentListPage">
+    <xs:annotation>
+      <xs:documentation>Страница Списка записей</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="core:PagingResults">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="appointment" type="tns:appointment">
+            <xs:annotation>
+              <xs:documentation>Сведения о Записи</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="appointmentCodeErrorFaultInfo">
+    <xs:annotation>
+      <xs:documentation>Error</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="messageText" type="xs:string"/>
+      <xs:element minOccurs="0" name="userId" type="xs:string"/>
+      <xs:element minOccurs="0" name="operation" type="xs:string"/>
+      <xs:element minOccurs="0" name="resource" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="availableResourceScheduleBySlots">
+    <xs:sequence>
+      <xs:element name="availableResource" type="ns1:availableResource"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="scheduleOfDay" type="ns1:scheduleOfDay"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="appointmentLock">
+    <xs:sequence>
+      <xs:element name="appointmentId" type="xs:long"/>
+      <xs:element minOccurs="0" name="arSpecialityId" type="xs:long"/>
+      <xs:element minOccurs="0" name="arSamplingTypeId" type="xs:long"/>
+      <xs:element minOccurs="0" name="lpuId" type="xs:long"/>
+      <xs:element minOccurs="0" name="patient" type="tns:patientShort"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="scheduleBySlot">
+    <xs:sequence>
+      <xs:element name="complexResourceId" type="xs:long"/>
+      <xs:element name="cabinetNumber" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" name="slot" type="ns1:slot"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="slot">
+    <xs:sequence>
+      <xs:element name="startTime" type="xs:dateTime"/>
+      <xs:element name="endTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mainDoctor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="specialityName" type="xs:string"/>
+      <xs:element name="specialityId" type="xs:long"/>
+      <xs:element name="firstName" type="xs:string"/>
+      <xs:element name="lastName" type="xs:string"/>
+      <xs:element minOccurs="0" name="secondName" type="xs:string"/>
+      <xs:element name="mejiId" type="xs:long"/>
+      <xs:element name="employeeId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Assignment">
+    <xs:sequence>
+      <xs:element name="moId" type="xs:long"/>
+      <xs:element name="samplingTypeId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД профиля взятия БМ</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="period" type="ns1:DatePeriod"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AssignmentGroup">
+    <xs:sequence>
+      <xs:element name="moId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД МО принимающее (головное ЛПУ куста)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="toBM" type="ns1:SamplingType">
+        <xs:annotation>
+          <xs:documentation>Профиль взятия БМ</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="period" type="ns1:DatePeriod">
+        <xs:annotation>
+          <xs:documentation>Период действия назначения</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="active" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Признак активности назначения</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="appointmentAvailable" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Признак возможности создать запись</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="appointmentOpenDate" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Дата открытия записи по направлению</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="appointmentId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД активной записи по данному назначению</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" name="registryEntry" type="ns1:registryEntry">
+        <xs:annotation>
+          <xs:documentation>Реестровые записи</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DatePeriod">
+    <xs:sequence>
+      <xs:element name="dateFrom" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Дата начала периода</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dateTo" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Дата окончания периода</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registryEntry">
+    <xs:sequence>
+      <xs:element name="entryId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД реестровой записи</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="laboratoryId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД лабораторного исследования</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="laboratoryName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Наименование ЛИ (краткое)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="biomaterialId" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД биоматериала</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="biomaterialName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Наименование биоматериала</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="hasMemo" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Признак наличия памятки</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="diagnosis" type="ns1:diagnosis">
+        <xs:annotation>
+          <xs:documentation>Информация о диагнозе</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="issuedDoctor" type="ns1:jobInfo">
+        <xs:annotation>
+          <xs:documentation>Информация о назначившем враче</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="receptionType">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="primary" type="xs:string"/>
+      <xs:element minOccurs="0" name="home" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ldpTypeForAr">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="complexResource">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="room" type="ns1:room"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="room">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long"/>
+      <xs:element minOccurs="0" name="number" type="xs:string"/>
+      <xs:element minOccurs="0" name="lpuId" type="xs:long"/>
+      <xs:element minOccurs="0" name="lpuShortName" type="xs:string"/>
+      <xs:element minOccurs="0" name="addressPointId" type="xs:long"/>
+      <xs:element minOccurs="0" name="defaultAddress" type="xs:string"/>
+      <xs:element name="availabilityDate" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SamplingType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:long">
+        <xs:annotation>
+          <xs:documentation>ИД профиля взятия БМ</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Название профиля</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="self" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Признак самовзятого БМ</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="soapException">
+    <xs:sequence>
+      <xs:element name="code" type="xs:string"/>
+      <xs:element name="text" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="appointmentLock" type="tns:appointmentLock"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="patientGroupError" type="tns:patientShort"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="patientShort">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="patientId" type="xs:long"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="patientGroupEntry">
+    <xs:sequence>
+      <xs:element name="omsNumber" type="xs:string"/>
+      <xs:element minOccurs="0" name="omsSeries" type="xs:string"/>
+      <xs:element name="birthDate" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimeInterval">
+    <xs:sequence>
+      <xs:element name="start" type="xs:dateTime"/>
+      <xs:element name="end" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DatePeriodOptional">
+    <xs:annotation>
+      <xs:documentation>Описывает календарный период</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dateFrom" type="xs:date"/>
+      <xs:element minOccurs="0" name="dateTo" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?xsd=AAAADHAjUCM4P2cuZURELs3rrVnLFkjJMy5mDfngAN2826cviAmOKcwB0rpK0eO9luhxWIPHWt9l0e4P44rDtQmP</con:url><con:content>&lt;xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://api.service.soap.emias.lanit.ru/core/v5/" version="1.0" xmlns="http://api.service.soap.emias.lanit.ru/core/v5/" xmlns:xs="http://www.w3.org/2001/XMLSchema">&#13;
+  &lt;xs:include schemaLocation="http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?xsd=AAAADHAjUCM4P2cuZURELsf0p1DdS1_UID8nCZurCtixl_TVFNCF.Zm2IERIorUG3w--"/>&#13;
+&lt;/xs:schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?xsd=AAAADHAjUCM4P2cuZURELsf0p1DdS1_UID8nCZurCtixl_TVFNCF.Zm2IERIorUG3w--</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?xsd=AAAADHAjUCM4P2cuZURELsf0p1DdS0_CIS5sEoTzQ4Wty6YHlLYutqNN7wO_MFN0JMBt"/>
+  <!--references-->
+  <xs:element name="mail" type="Mail">
+    <xs:annotation>
+      <xs:documentation>Адрес электронной почты</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="medicalOrganizationId" type="ID">
+    <xs:annotation>
+      <xs:documentation>Идентификатор Медицинской организации</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="medicalFacilityId" type="ID">
+    <xs:annotation>
+      <xs:documentation>Идентификатор Медицинского учреждения</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="compositionId" type="GUID">
+    <xs:annotation>
+      <xs:documentation>Идентификатор Композиции Think!EHR ЕМИАС.СИМИ</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="simiDocumentId" type="GUID">
+    <xs:annotation>
+      <xs:documentation>Идентификатор Документа СИМИ ЕМИАС.СИМИ</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <!--abstract types-->
+  <xs:complexType abstract="true" name="Base">
+    <xs:annotation>
+      <xs:documentation>Базовый абстрактный тип, используемый для описания компонентов сущностей, владельцеми которых является текущий продукт ЕМИАС</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="id" type="ID" use="required">
+      <xs:annotation>
+        <xs:documentation>Идентификатор сущности/записи на уровне всего ЕМИАС</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType abstract="true" name="EntityBase">
+    <xs:annotation>
+      <xs:documentation>Базовый абстрактный тип, используемый для описания сущностей, владельцем которых является текущий продукт ЕМИАС</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Base">
+        <xs:attribute name="archived" type="xs:boolean" use="required">
+          <xs:annotation>
+            <xs:documentation>Признак "Архивная сущность"</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType abstract="true" name="ForeignBase">
+    <xs:annotation>
+      <xs:documentation>Базовый абстрактный тип, используемый для описания компонентов сущностей, владельцами которых являются другие продукты ЕМИАС</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Base"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType abstract="true" name="ForeignEntityBase">
+    <xs:annotation>
+      <xs:documentation>Базовый абстрактный тип, используемый для описания сущностей, владельцами которых являются другие продукты ЕМИАС</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="EntityBase"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType abstract="true" name="NsiBase">
+    <xs:annotation>
+      <xs:documentation>Базовый абстрактный тип, используемый для описания типов, реализующих справочники ЕМИАС.НСИ.2</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ForeignEntityBase">
+        <xs:sequence>
+          <xs:element name="title" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Наименование элемента справочника</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType abstract="true" name="NsiWithCodeBase">
+    <xs:annotation>
+      <xs:documentation>Базовый абстрактный тип, используемый для описания типов, реализующих справочники ЕМИАС.НСИ.2, в которых имеется бизнес-код</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="NsiBase">
+        <xs:attribute name="code" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Бизнес-код</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType abstract="true" name="SIMIDocumentBase">
+    <xs:annotation>
+      <xs:documentation>Базовый абстрактный тип, используемый для описания cведений о документе СИМИ</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="simiDocumentId"/>
+      <xs:element minOccurs="0" ref="compositionId"/>
+    </xs:sequence>
+  </xs:complexType>
+  <!--async operation status-->
+  <xs:element name="operationId" type="ID">
+    <xs:annotation>
+      <xs:documentation>Идентификатор операции</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="OperationExecutionStatus">
+    <xs:annotation>
+      <xs:documentation>Статус выполнения операции</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="isCompleted" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Признак окончания выполнения операции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="completenessProgress" type="OperationCompletenessBase">
+        <xs:annotation>
+          <xs:documentation>Сведения о текущем статусе выполнения операции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="hasSucceded" type="xs:boolean">
+        <xs:annotation>
+          <xs:documentation>Признак успешности выполнения операции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="messages" type="ErrorMessageCollection">
+        <xs:annotation>
+          <xs:documentation>Коллекция сообщений, порожденных в ходе выполнения операции</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="id" type="ID" use="required">
+      <xs:annotation>
+        <xs:documentation>Идентификатор операции</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType abstract="false" name="OperationCompletenessPercentage">
+    <xs:annotation>
+      <xs:documentation>Описание текущего статуса выполнения операции в процентах (0%-100%)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="OperationCompletenessBase">
+        <xs:sequence>
+          <xs:element name="completenessStatus">
+            <xs:annotation>
+              <xs:documentation>Статус (0%-100%)</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+              <xs:restriction base="xs:unsignedByte">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="100"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType abstract="true" name="OperationCompletenessBase">
+    <xs:annotation>
+      <xs:documentation>Базовый абстрактный тип для описания текущего статуса выполнения операции</xs:documentation>
+    </xs:annotation>
+    <xs:sequence/>
+  </xs:complexType>
+  <!--calling methods' options-->
+  <xs:element name="options" type="Options">
+    <xs:annotation>
+      <xs:documentation>Параметры вызова метода</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="Options">
+    <xs:annotation>
+      <xs:documentation>Набор именованных значений</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="entry" type="KeyValuePair">
+        <xs:annotation>
+          <xs:documentation>Именованное значение</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!--pagination-->
+  <xs:element name="pagingOptions" type="PagingOptions">
+    <xs:annotation>
+      <xs:documentation>Параметры пагинации</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType abstract="true" name="PagingResults">
+    <xs:annotation>
+      <xs:documentation>Список с пагинацией</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="pageNumber" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>Номер страницы (zero-based)</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="pageTotal" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>Общее количество страниц</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="pageSize" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>Размер страницы</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="morePagesAvailable" type="xs:boolean" use="required">
+      <xs:annotation>
+        <xs:documentation>Флаг доступности других страниц с результатами для "постраничного листания" (true - если доступны еще страницы; false - иначе)</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="totalItemsCount" type="xs:long" use="required">
+      <xs:annotation>
+        <xs:documentation>Общее количество элементов (на всех страницах)</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="PagingOptions">
+    <xs:annotation>
+      <xs:documentation>Параметры пагинации</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" ref="sortingOptions"/>
+    </xs:sequence>
+    <xs:attribute name="pageNumber" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>Номер страницы (zero-based)</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="pageSize" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>Размер страницы</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <!--sorting-->
+  <xs:element name="sortingOptions" type="SortingOptions">
+    <xs:annotation>
+      <xs:documentation>Параметры сортировки</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="SortingOptions">
+    <xs:annotation>
+      <xs:documentation>Условия сортировки</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="3" name="sortOrder" type="SortOrder">
+        <xs:annotation>
+          <xs:documentation>Условия сортировки (используются в соответствии с переданной последовательностью)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SortOrder">
+    <xs:annotation>
+      <xs:documentation>Сортировка</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="attributeName" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>Наименование поля, по которому должна быть произведена сортировка</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute default="false" name="desceding" type="xs:boolean">
+      <xs:annotation>
+        <xs:documentation>Направление сортировки</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <!--void response-->
+  <xs:element fixed="true" name="result">
+    <xs:annotation>
+      <xs:documentation>Элемент для использования в методах, не предполагающих возврат какого-либо значения</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:boolean"/>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <!--base types-->
+  <xs:complexType name="TimeInterval">
+    <xs:annotation>
+      <xs:documentation>Временной период (время)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="start" type="xs:time">
+        <xs:annotation>
+          <xs:documentation>Время начала интервала</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="end" type="xs:time">
+        <xs:annotation>
+          <xs:documentation>Время окончания интервала</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DatePeriod">
+    <xs:annotation>
+      <xs:documentation>Временной период (дата)</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="start" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Дата начала периода</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="end" type="xs:date">
+        <xs:annotation>
+          <xs:documentation>Дата окончания периода</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <!--keys-->
+  <xs:complexType name="EntityId">
+    <xs:annotation>
+      <xs:documentation>Идентфикатор сущности, непосредственно принадлежащей текущему продукту ЕМИАС</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Base"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ForeignEntityId">
+    <xs:annotation>
+      <xs:documentation>Идентфикатор сущности ЕМИАС, внешней по отношнению к текущему продукту ЕМИАС</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ForeignBase"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NsiGlobalId">
+    <xs:annotation>
+      <xs:documentation>Глобальный идентфикатор ЕМИАС.НСИ</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="ForeignBase"/>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?xsd=AAAADHAjUCM4P2cuZURELsf0p1DdS0_CIS5sEoTzQ4Wty6YHlLYutqNN7wO_MFN0JMBt</con:url><con:content><![CDATA[<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--error message description-->
+  <xs:complexType name="ErrorMessageCollection">
+    <xs:annotation>
+      <xs:documentation>Коллекция сообщений об ошибках</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="message" type="ErrorMessage">
+        <xs:annotation>
+          <xs:documentation>Сообщение об ошибке</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ErrorMessage">
+    <xs:annotation>
+      <xs:documentation>Сообщение об ошибке</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="Message">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parameters">
+            <xs:annotation>
+              <xs:documentation>Коллекция параметров сообщения</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" name="parameter" type="KeyValuePair">
+                  <xs:annotation>
+                    <xs:documentation>Параметр сообщения</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="messages" type="ErrorMessageCollection">
+            <xs:annotation>
+              <xs:documentation>Сопутствующие сообщения об ошибках</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="type" type="ErrorMessageTypes" use="required">
+          <xs:annotation>
+            <xs:documentation>Тип сообщения</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ErrorMessageTypes">
+    <xs:annotation>
+      <xs:documentation>Тип сообщения об ошибке</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ERROR">
+        <xs:annotation>
+          <xs:documentation>Ошибка</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="WARNING">
+        <xs:annotation>
+          <xs:documentation>Предупреждение (не блокирующая ошибка)</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="INFO">
+        <xs:annotation>
+          <xs:documentation>Информационное сообщение</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ID">
+    <xs:annotation>
+      <xs:documentation>Идентификатор</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:long"/>
+  </xs:simpleType>
+  <xs:simpleType name="GUID">
+    <xs:annotation>
+      <xs:documentation>Глобальный 128-битный идентификатор (Globally Unique Identifier)</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="KeyValuePair">
+    <xs:annotation>
+      <xs:documentation>Представляет тип "ключ/значение"</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="key" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>Ключ</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="Mail">
+    <xs:annotation>
+      <xs:documentation>Адрес электронной почты</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="320"/>
+      <xs:pattern value=".+@.+\..+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Message">
+    <xs:annotation>
+      <xs:documentation>Сообщение</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="code" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Код сообщения</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="message" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Текст сообщения</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint></con:endpoints><con:operation id="255af45c-2cc3-42f6-9a3e-badb4692bedb" isOneWay="false" action="urn://cancelAppointment" name="cancelAppointment" bindingOperationName="cancelAppointment" type="Request-Response" outputName="cancelAppointmentResponse" inputName="cancelAppointment" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7f34ada2-80ed-43ce-8ad2-a4ca1ac3ad80" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:cancelAppointment>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <appointmentId>?</appointmentId>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:cancelAppointment>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/cancelAppointment"/></con:call></con:operation><con:operation id="c10c5cd9-e056-47b6-8ca1-d4a977fe2548" isOneWay="false" action="urn://cancelAppointmentByID" name="cancelAppointmentByID" bindingOperationName="cancelAppointmentByID" type="Request-Response" outputName="cancelAppointmentByIDResponse" inputName="cancelAppointmentByID" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5058ba7f-4249-41cb-9874-7d88966580a0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:cancelAppointmentByID>\r
+         <appointmentId>?</appointmentId>\r
+      </v5:cancelAppointmentByID>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/cancelAppointmentByID"/></con:call></con:operation><con:operation id="96e06a32-57b8-4db3-82f3-25de90d516e4" isOneWay="false" action="urn://cancelAppointmentBySms" name="cancelAppointmentBySms" bindingOperationName="cancelAppointmentBySms" type="Request-Response" outputName="cancelAppointmentBySmsResponse" inputName="cancelAppointmentBySms" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d645af82-8e29-4647-a1c0-a9bba59cf115" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:cancelAppointmentBySms>\r
+         <patientPhoneNumber>?</patientPhoneNumber>\r
+         <message>?</message>\r
+      </v5:cancelAppointmentBySms>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/cancelAppointmentBySms"/></con:call></con:operation><con:operation id="a43d3188-703c-46d1-aa4c-240fa7bf2be2" isOneWay="false" action="urn://cancelAppointmentToDutyDoctorByPatient" name="cancelAppointmentToDutyDoctorByPatient" bindingOperationName="cancelAppointmentToDutyDoctorByPatient" type="Request-Response" outputName="cancelAppointmentToDutyDoctorByPatientResponse" inputName="cancelAppointmentToDutyDoctorByPatient" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4e555d2f-5dd2-4981-bf4a-3288fc400eec" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:cancelAppointmentToDutyDoctorByPatient>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <externalSystemId>?</externalSystemId>\r
+         <appointmentId>?</appointmentId>\r
+      </v5:cancelAppointmentToDutyDoctorByPatient>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/cancelAppointmentToDutyDoctorByPatient"/></con:call></con:operation><con:operation id="fac55b2f-6660-4938-9716-70f50cae74fb" isOneWay="false" action="urn://createAppointment" name="createAppointment" bindingOperationName="createAppointment" type="Request-Response" outputName="createAppointmentResponse" inputName="createAppointment" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e36f99f9-7475-46e5-9747-c1ba633793a0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:createAppointment>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <availableResourceId>?</availableResourceId>\r
+         <complexResourceId>?</complexResourceId>\r
+         <startTime>?</startTime>\r
+         <endTime>?</endTime>\r
+         <!--You have a CHOICE of the next 2 items at this level-->\r
+         <referralId>?</referralId>\r
+         <receptionTypeId>?</receptionTypeId>\r
+         <!--Optional:-->\r
+         <complaintId>?</complaintId>\r
+         <!--Optional:-->\r
+         <inquiryPurposeId>?</inquiryPurposeId>\r
+         <externalSystemId>?</externalSystemId>\r
+         <!--Optional:-->\r
+         <eno>?</eno>\r
+      </v5:createAppointment>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/createAppointment"/></con:call></con:operation><con:operation id="bc60019d-7ffe-4dd2-9a5c-b24fb4b184ea" isOneWay="false" action="urn://createAppointmentForGroup" name="createAppointmentForGroup" bindingOperationName="createAppointmentForGroup" type="Request-Response" outputName="createAppointmentForGroupResponse" inputName="createAppointmentForGroup" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ac60f139-ce66-4254-a691-eda894cd71a3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:createAppointmentForGroup>\r
+         <!--2 to 10 repetitions:-->\r
+         <patientGroupEntry>\r
+            <omsNumber>?</omsNumber>\r
+            <!--Optional:-->\r
+            <omsSeries>?</omsSeries>\r
+            <birthDate>?</birthDate>\r
+            <appTime>\r
+               <start>?</start>\r
+               <end>?</end>\r
+            </appTime>\r
+            <complexResourceId>?</complexResourceId>\r
+         </patientGroupEntry>\r
+         <patientGroupEntry>\r
+            <omsNumber>?</omsNumber>\r
+            <!--Optional:-->\r
+            <omsSeries>?</omsSeries>\r
+            <birthDate>?</birthDate>\r
+            <appTime>\r
+               <start>?</start>\r
+               <end>?</end>\r
+            </appTime>\r
+            <complexResourceId>?</complexResourceId>\r
+         </patientGroupEntry>\r
+         <availableResourceId>?</availableResourceId>\r
+         <receptionTypeId>?</receptionTypeId>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:createAppointmentForGroup>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/createAppointmentForGroup"/></con:call></con:operation><con:operation id="3707ebc7-0b3e-47c7-a9b5-28acc0c8e9a2" isOneWay="false" action="urn://createAppointmentToDutyDoctorByPatient" name="createAppointmentToDutyDoctorByPatient" bindingOperationName="createAppointmentToDutyDoctorByPatient" type="Request-Response" outputName="createAppointmentToDutyDoctorByPatientResponse" inputName="createAppointmentToDutyDoctorByPatient" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3949487e-fd48-4de9-a8fd-5b08330a72f1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:createAppointmentToDutyDoctorByPatient>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <externalSystemId>?</externalSystemId>\r
+         <lpuId>?</lpuId>\r
+         <availableResourceId>?</availableResourceId>\r
+         <complexResourceId>?</complexResourceId>\r
+      </v5:createAppointmentToDutyDoctorByPatient>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/createAppointmentToDutyDoctorByPatient"/></con:call></con:operation><con:operation id="1742c462-65c7-4f49-935c-fdaf375b363d" isOneWay="false" action="urn://getAppointmentReceptionsByPatient" name="getAppointmentReceptionsByPatient" bindingOperationName="getAppointmentReceptionsByPatient" type="Request-Response" outputName="getAppointmentReceptionsByPatientResponse" inputName="getAppointmentReceptionsByPatient" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a84f4b60-0bf0-4f08-b484-37746da9ed96" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getAppointmentReceptionsByPatient>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <externalSystemId>?</externalSystemId>\r
+         <!--Optional:-->\r
+         <signActiveArchive>?</signActiveArchive>\r
+      </v5:getAppointmentReceptionsByPatient>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getAppointmentReceptionsByPatient"/></con:call></con:operation><con:operation id="1d76cd3a-06a4-46f9-9f42-ca2911d0192a" isOneWay="false" action="urn://getArchivedAppointments" name="getArchivedAppointments" bindingOperationName="getArchivedAppointments" type="Request-Response" outputName="getArchivedAppointmentsResponse" inputName="getArchivedAppointments" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1f0a1287-4798-4728-9e04-a682d59df186" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/" xmlns:v51="http://api.service.soap.emias.lanit.ru/core/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getArchivedAppointments>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <!--Optional:-->\r
+         <period>\r
+            <!--Optional:-->\r
+            <dateFrom>?</dateFrom>\r
+            <!--Optional:-->\r
+            <dateTo>?</dateTo>\r
+         </period>\r
+         <externalSystemId>?</externalSystemId>\r
+         <!--Optional:-->\r
+         <pagingOptions pageNumber="?" pageSize="?">\r
+            <!--Optional:-->\r
+            <v51:sortingOptions>\r
+               <!--1 to 3 repetitions:-->\r
+               <v51:sortOrder attributeName="?" desceding="false"/>\r
+            </v51:sortingOptions>\r
+         </pagingOptions>\r
+      </v5:getArchivedAppointments>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getArchivedAppointments"/></con:call></con:operation><con:operation id="50bebe86-3487-41b4-9fc2-847e3b7cf35c" isOneWay="false" action="urn://getAssignmentsInfo" name="getAssignmentsInfo" bindingOperationName="getAssignmentsInfo" type="Request-Response" outputName="getAssignmentsInfoResponse" inputName="getAssignmentsInfo" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="38127132-0d85-45f2-b3ed-5e035f5de5b3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getAssignmentsInfo>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <!--Optional:-->\r
+         <returnExtended>false</returnExtended>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:getAssignmentsInfo>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getAssignmentsInfo"/></con:call></con:operation><con:operation id="76bbe24a-5381-425a-a2e2-82f86e4acaef" isOneWay="false" action="urn://getAvailableResourceScheduleInfo" name="getAvailableResourceScheduleInfo" bindingOperationName="getAvailableResourceScheduleInfo" type="Request-Response" outputName="getAvailableResourceScheduleInfoResponse" inputName="getAvailableResourceScheduleInfo" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="759bb215-7e3e-43ce-8d41-b44508a49210" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getAvailableResourceScheduleInfo>\r
+         <availableResourceId>?</availableResourceId>\r
+         <!--Optional:-->\r
+         <complexResourceId>?</complexResourceId>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <!--Optional:-->\r
+         <referralId>?</referralId>\r
+         <!--Optional:-->\r
+         <period>\r
+            <dateFrom>?</dateFrom>\r
+            <dateTo>?</dateTo>\r
+         </period>\r
+         <!--Optional:-->\r
+         <appointmentId>?</appointmentId>\r
+         <!--Optional:-->\r
+         <quotaTypes>\r
+            <!--1 or more repetitions:-->\r
+            <quotaType>?</quotaType>\r
+         </quotaTypes>\r
+         <!--Optional:-->\r
+         <disableQuotaTypes>\r
+            <!--1 or more repetitions:-->\r
+            <quotaType>?</quotaType>\r
+         </disableQuotaTypes>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:getAvailableResourceScheduleInfo>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getAvailableResourceScheduleInfo"/></con:call></con:operation><con:operation id="31c2a412-cf4b-4326-a9ab-a2b77b36a51c" isOneWay="false" action="urn://getAvailableResourceScheduleInfoForGroup" name="getAvailableResourceScheduleInfoForGroup" bindingOperationName="getAvailableResourceScheduleInfoForGroup" type="Request-Response" outputName="getAvailableResourceScheduleInfoForGroupResponse" inputName="getAvailableResourceScheduleInfoForGroup" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f1588fa8-1b1a-4bf1-9280-6f5c0f1bc12b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getAvailableResourceScheduleInfoForGroup>\r
+         <availableResourceId>?</availableResourceId>\r
+         <!--2 to 10 repetitions:-->\r
+         <patientGroupEntry>\r
+            <omsNumber>?</omsNumber>\r
+            <!--Optional:-->\r
+            <omsSeries>?</omsSeries>\r
+            <birthDate>?</birthDate>\r
+            <!--Optional:-->\r
+            <appointmentId>?</appointmentId>\r
+         </patientGroupEntry>\r
+         <patientGroupEntry>\r
+            <omsNumber>?</omsNumber>\r
+            <!--Optional:-->\r
+            <omsSeries>?</omsSeries>\r
+            <birthDate>?</birthDate>\r
+            <!--Optional:-->\r
+            <appointmentId>?</appointmentId>\r
+         </patientGroupEntry>\r
+         <!--Optional:-->\r
+         <quotaTypes>\r
+            <!--1 or more repetitions:-->\r
+            <quotaType>?</quotaType>\r
+         </quotaTypes>\r
+         <!--Optional:-->\r
+         <disableQuotaTypes>\r
+            <!--1 or more repetitions:-->\r
+            <quotaType>?</quotaType>\r
+         </disableQuotaTypes>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:getAvailableResourceScheduleInfoForGroup>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getAvailableResourceScheduleInfoForGroup"/></con:call></con:operation><con:operation id="c10ae438-43c8-41db-8353-d5c7e6b626fc" isOneWay="false" action="urn://getDoctorsInfo" name="getDoctorsInfo" bindingOperationName="getDoctorsInfo" type="Request-Response" outputName="getDoctorsInfoResponse" inputName="getDoctorsInfo" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="44d8a660-5c50-4e00-a449-b62ee84db6ea" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getDoctorsInfo>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <!--You have a CHOICE of the next 3 items at this level-->\r
+         <appointmentId>?</appointmentId>\r
+         <referralId>?</referralId>\r
+         <specialityId>?</specialityId>\r
+         <!--Optional:-->\r
+         <lpuId>?</lpuId>\r
+         <!--Optional:-->\r
+         <includeArWithoutSlots>?</includeArWithoutSlots>\r
+         <!--Optional:-->\r
+         <quotaTypes>\r
+            <!--1 or more repetitions:-->\r
+            <quotaType>?</quotaType>\r
+         </quotaTypes>\r
+         <!--Optional:-->\r
+         <disableQuotaTypes>\r
+            <!--1 or more repetitions:-->\r
+            <quotaType>?</quotaType>\r
+         </disableQuotaTypes>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:getDoctorsInfo>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getDoctorsInfo"/></con:call></con:operation><con:operation id="ab968f7a-8ac2-4225-8b02-c9bf091d4a6d" isOneWay="false" action="urn://getDoctorsInfoForGroup" name="getDoctorsInfoForGroup" bindingOperationName="getDoctorsInfoForGroup" type="Request-Response" outputName="getDoctorsInfoForGroupResponse" inputName="getDoctorsInfoForGroup" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="99c86b13-c6b4-4038-9449-4cd0f22f8e63" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getDoctorsInfoForGroup>\r
+         <!--2 to 10 repetitions:-->\r
+         <patientGroupEntry>\r
+            <omsNumber>?</omsNumber>\r
+            <!--Optional:-->\r
+            <omsSeries>?</omsSeries>\r
+            <birthDate>?</birthDate>\r
+            <!--Optional:-->\r
+            <appointmentId>?</appointmentId>\r
+         </patientGroupEntry>\r
+         <patientGroupEntry>\r
+            <omsNumber>?</omsNumber>\r
+            <!--Optional:-->\r
+            <omsSeries>?</omsSeries>\r
+            <birthDate>?</birthDate>\r
+            <!--Optional:-->\r
+            <appointmentId>?</appointmentId>\r
+         </patientGroupEntry>\r
+         <!--Optional:-->\r
+         <quotaTypes>\r
+            <!--1 or more repetitions:-->\r
+            <quotaType>?</quotaType>\r
+         </quotaTypes>\r
+         <!--Optional:-->\r
+         <disableQuotaTypes>\r
+            <!--1 or more repetitions:-->\r
+            <quotaType>?</quotaType>\r
+         </disableQuotaTypes>\r
+         <specialityId>?</specialityId>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:getDoctorsInfoForGroup>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getDoctorsInfoForGroup"/></con:call></con:operation><con:operation id="2335f9b1-a528-44bb-afe0-f866e927a908" isOneWay="false" action="urn://getDoctorsInfoForLI" name="getDoctorsInfoForLI" bindingOperationName="getDoctorsInfoForLI" type="Request-Response" outputName="getDoctorsInfoForLIResponse" inputName="getDoctorsInfoForLI" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7db1c879-96f8-42a9-baa9-43e9c5c0ac31" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getDoctorsInfoForLI>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <assignment>\r
+            <moId>?</moId>\r
+            <samplingTypeId>?</samplingTypeId>\r
+            <period>\r
+               <dateFrom>?</dateFrom>\r
+               <dateTo>?</dateTo>\r
+            </period>\r
+         </assignment>\r
+         <!--Optional:-->\r
+         <appointmentId>?</appointmentId>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:getDoctorsInfoForLI>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getDoctorsInfoForLI"/></con:call></con:operation><con:operation id="87505e50-12c0-4175-9d12-146eb3053aac" isOneWay="false" action="urn://getDutyARScheduleByPatient" name="getDutyARScheduleByPatient" bindingOperationName="getDutyARScheduleByPatient" type="Request-Response" outputName="getDutyARScheduleByPatientResponse" inputName="getDutyARScheduleByPatient" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5e0665e2-00ae-407b-af05-8bfd218cf051" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getDutyARScheduleByPatient>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <externalSystemId>?</externalSystemId>\r
+         <lpuId>?</lpuId>\r
+      </v5:getDutyARScheduleByPatient>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getDutyARScheduleByPatient"/></con:call></con:operation><con:operation id="b13999e3-500b-42ed-937a-870ad689c9c8" isOneWay="false" action="urn://getHealthCareAvailabilityAttributes" name="getHealthCareAvailabilityAttributes" bindingOperationName="getHealthCareAvailabilityAttributes" type="Request-Response" outputName="getHealthCareAvailabilityAttributesResponse" inputName="getHealthCareAvailabilityAttributes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dc25d87e-6065-4bc4-95fc-4e376847826d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getHealthCareAvailabilityAttributes>\r
+         <patientId>?</patientId>\r
+         <!--You have a CHOICE of the next 4 items at this level-->\r
+         <referralId>?</referralId>\r
+         <specialityId>?</specialityId>\r
+         <ldpId>?</ldpId>\r
+         <samplingTypeId>?</samplingTypeId>\r
+      </v5:getHealthCareAvailabilityAttributes>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getHealthCareAvailabilityAttributes"/></con:call></con:operation><con:operation id="360f27e3-c63a-4a7e-a4bb-6d93e1879601" isOneWay="false" action="urn://getLpusForSpeciality" name="getLpusForSpeciality" bindingOperationName="getLpusForSpeciality" type="Request-Response" outputName="getLpusForSpecialityResponse" inputName="getLpusForSpeciality" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d232c754-1bd4-431f-8268-238890aa4459" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getLpusForSpeciality>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <specialityId>?</specialityId>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:getLpusForSpeciality>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getLpusForSpeciality"/></con:call></con:operation><con:operation id="1fe95231-1929-40e3-915e-f439ccba19b0" isOneWay="false" action="urn://getReferralsInfo" name="getReferralsInfo" bindingOperationName="getReferralsInfo" type="Request-Response" outputName="getReferralsInfoResponse" inputName="getReferralsInfo" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="000f08ba-12ad-44c9-8f7b-0744408b4a48" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getReferralsInfo>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <!--Optional:-->\r
+         <returnCompleted>false</returnCompleted>\r
+         <!--Optional:-->\r
+         <returnExtended>?</returnExtended>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:getReferralsInfo>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getReferralsInfo"/></con:call></con:operation><con:operation id="e12aa114-cb67-413d-acd2-1938244b6974" isOneWay="false" action="urn://getSpecialitiesInfo" name="getSpecialitiesInfo" bindingOperationName="getSpecialitiesInfo" type="Request-Response" outputName="getSpecialitiesInfoResponse" inputName="getSpecialitiesInfo" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="12bec552-6ce1-40bb-b778-26782fcaccb8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getSpecialitiesInfo>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <!--Optional:-->\r
+         <quotaTypes>\r
+            <!--1 or more repetitions:-->\r
+            <quotaType>?</quotaType>\r
+         </quotaTypes>\r
+         <!--Optional:-->\r
+         <disableQuotaTypes>\r
+            <!--1 or more repetitions:-->\r
+            <quotaType>?</quotaType>\r
+         </disableQuotaTypes>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:getSpecialitiesInfo>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getSpecialitiesInfo"/></con:call></con:operation><con:operation id="8bee66ed-dba1-44da-9fa7-01cc94aedc8f" isOneWay="false" action="urn://getSpecialitiesInfoForGroup" name="getSpecialitiesInfoForGroup" bindingOperationName="getSpecialitiesInfoForGroup" type="Request-Response" outputName="getSpecialitiesInfoForGroupResponse" inputName="getSpecialitiesInfoForGroup" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5ec630a9-460c-4f51-867f-7ecc61228a7f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:getSpecialitiesInfoForGroup>\r
+         <!--2 to 10 repetitions:-->\r
+         <patientGroupEntry>\r
+            <omsNumber>?</omsNumber>\r
+            <!--Optional:-->\r
+            <omsSeries>?</omsSeries>\r
+            <birthDate>?</birthDate>\r
+         </patientGroupEntry>\r
+         <patientGroupEntry>\r
+            <omsNumber>?</omsNumber>\r
+            <!--Optional:-->\r
+            <omsSeries>?</omsSeries>\r
+            <birthDate>?</birthDate>\r
+         </patientGroupEntry>\r
+         <!--Optional:-->\r
+         <quotaTypes>\r
+            <!--1 or more repetitions:-->\r
+            <quotaType>?</quotaType>\r
+         </quotaTypes>\r
+         <!--Optional:-->\r
+         <disableQuotaTypes>\r
+            <!--1 or more repetitions:-->\r
+            <quotaType>?</quotaType>\r
+         </disableQuotaTypes>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:getSpecialitiesInfoForGroup>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/getSpecialitiesInfoForGroup"/></con:call></con:operation><con:operation id="53facc32-276a-4297-848f-52d1c12e4514" isOneWay="false" action="urn://shiftAppointment" name="shiftAppointment" bindingOperationName="shiftAppointment" type="Request-Response" outputName="shiftAppointmentResponse" inputName="shiftAppointment" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0d88797c-bc0c-4604-81ac-5d9d040da8f3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:shiftAppointment>\r
+         <omsNumber>?</omsNumber>\r
+         <!--Optional:-->\r
+         <omsSeries>?</omsSeries>\r
+         <birthDate>?</birthDate>\r
+         <availableResourceId>?</availableResourceId>\r
+         <!--Optional:-->\r
+         <complexResourceId>?</complexResourceId>\r
+         <startTime>?</startTime>\r
+         <endTime>?</endTime>\r
+         <!--You have a CHOICE of the next 2 items at this level-->\r
+         <referralId>?</referralId>\r
+         <receptionTypeId>?</receptionTypeId>\r
+         <appointmentId>?</appointmentId>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:shiftAppointment>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/shiftAppointment"/></con:call></con:operation><con:operation id="1fcde675-93eb-4bf8-81d5-e03d23397764" isOneWay="false" action="urn://shiftAppointmentForGroup" name="shiftAppointmentForGroup" bindingOperationName="shiftAppointmentForGroup" type="Request-Response" outputName="shiftAppointmentForGroupResponse" inputName="shiftAppointmentForGroup" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="93fd8a0f-dfc7-4493-ac5b-7a1b11c64b76" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <v5:shiftAppointmentForGroup>\r
+         <!--2 to 10 repetitions:-->\r
+         <patientGroupEntry>\r
+            <omsNumber>?</omsNumber>\r
+            <!--Optional:-->\r
+            <omsSeries>?</omsSeries>\r
+            <birthDate>?</birthDate>\r
+            <appTime>\r
+               <start>?</start>\r
+               <end>?</end>\r
+            </appTime>\r
+            <complexResourceId>?</complexResourceId>\r
+            <appointmentId>?</appointmentId>\r
+         </patientGroupEntry>\r
+         <patientGroupEntry>\r
+            <omsNumber>?</omsNumber>\r
+            <!--Optional:-->\r
+            <omsSeries>?</omsSeries>\r
+            <birthDate>?</birthDate>\r
+            <appTime>\r
+               <start>?</start>\r
+               <end>?</end>\r
+            </appTime>\r
+            <complexResourceId>?</complexResourceId>\r
+            <appointmentId>?</appointmentId>\r
+         </patientGroupEntry>\r
+         <availableResourceId>?</availableResourceId>\r
+         <receptionTypeId>?</receptionTypeId>\r
+         <externalSystemId>?</externalSystemId>\r
+      </v5:shiftAppointmentForGroup>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/shiftAppointmentForGroup"/></con:call></con:operation></con:interface><con:testSuite id="24188b62-56b7-4f6e-8cf2-87c22db9ae80" name="getAssignmentsReferralsInfo"><con:description>TestSuite generated for REST Service [http://application-emiasinfo1.dev-emias.emias.ru]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e91baace-5876-4747-b387-b764acd3204a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Интеграционный тест" searchProperties="true"><con:description>TestCase generated for REST Resource [] located at [/api/v1/saOrchestrator/getAssignmentsReferralsInfo]</con:description><con:settings/><con:testStep type="restrequest" name="getAssignmentsReferralsInfo" id="725316a8-2fc0-411d-b276-b0932ffffbca"><con:settings/><con:config service="http://application-emiasinfo1.dev-emias.emias.ru" resourcePath="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAssignmentsReferralsInfo" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://application-emiasinfo1.dev-emias.emias.ru</con:endpoint><con:request>{"birthDate":"1939-10-23","omsNumber":"7700007178231039","patientId":"10166510"}</con:request><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="64da3482-cff6-4b93-a197-5a299fe58fb3" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="omsNumber" value="${#TestCase#omsNumber}"/>
+  <con:entry key="birthDate" value="${#TestCase#birthDate}"/>
+</con:parameters><con:parameterOrder><con:entry>omsNumber</con:entry><con:entry>birthDate</con:entry><con:entry>Mock-saOrchestrator</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="request" name="getReferralsInfo" id="95adf56c-a907-4d9a-8c26-19c00a34ed6d"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SelfAppointmentServiceV5Binding</con:interface><con:operation>getReferralsInfo</con:operation><con:request name="getReferralsInfo" id="531eafe8-bfc5-411a-88fe-515e12d677a8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">
+<soap:Header>
+<wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+<wsse:UsernameToken>
+<wsse:Username>EIM</wsse:Username>
+</wsse:UsernameToken>
+</wsse:Security>
+</soap:Header>
+   <soap:Body>
+      <v5:getReferralsInfo>
+           <omsNumber>${#TestCase#omsNumber}</omsNumber>
+         <birthDate>${#TestCase#birthDate}</birthDate>
+         <returnExtended>true</returnExtended>
+         <externalSystemId>EIM</externalSystemId>
+      </v5:getReferralsInfo>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="dd4e2299-daca-4801-9ccb-8ec3b7a43890"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="getAssignmentsInfo" id="2f5ae22d-a622-4f68-8880-024adf7143ed"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SelfAppointmentServiceV5Binding</con:interface><con:operation>getAssignmentsInfo</con:operation><con:request name="getAssignmentsInfo" id="246bdc92-5ad1-403e-9574-f5fe72c8fc25"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">
+<soap:Header>
+<wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+<wsse:UsernameToken>
+<wsse:Username>EIM</wsse:Username>
+</wsse:UsernameToken>
+</wsse:Security>
+</soap:Header>
+   <soap:Body>
+      <v5:getAssignmentsInfo>
+         <omsNumber>${#TestCase#omsNumber}</omsNumber>
+         <birthDate>${#TestCase#birthDate}</birthDate>
+         <returnExtended>true</returnExtended>
+         <externalSystemId>EIM</externalSystemId>
+      </v5:getAssignmentsInfo>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="272dfba3-8fb7-41f1-b56b-6fee14c53c62"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Проверить count" id="a083af7c-6346-45f5-8715-e5583f216fcf"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+import groovy.xml.XmlSlurper
+import java.util.ArrayList
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
+def checkParameter(String paramName, def expValue, def currentValue){
+	if(currentValue != expValue){ 
+		testRunner.fail()
+		log.info("значение "+paramName+" не соответствует ожидаемому. ожидаемое ="+expValue.toString()+", фактическое ="+currentValue.toString())
+	}
+}
+
+def getAssignmentsReferralsInfoResponse = context.expand('${getAssignmentsReferralsInfo#Response}')// вызываем метод, записывыем его ответ в виде текста в переменную
+def slurperJson = new JsonSlurper()//штука для парсинка джейсона
+def getAssignmentsReferralsInfo = slurperJson.parseText(getAssignmentsReferralsInfoResponse)//парсим текст и получаем объект в коде с которым можно работать
+
+def getAssignmentsInfoSAOResponse = context.expand('${getAssignmentsInfo#Response}')
+def slurperXml = new XmlSlurper()
+getAssignmentsInfoSAO = slurperXml.parseText(getAssignmentsInfoSAOResponse)
+
+def getReferralsInfoSAOResponse = context.expand('${getReferralsInfo#Response}')
+getReferralsInfoSAO = slurperXml.parseText(getReferralsInfoSAOResponse)
+
+def countInfo=getAssignmentsReferralsInfo.payload.arInfo.count
+def assigmentsCount=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment.size()
+def referralsCount=getReferralsInfoSAO.Body.getReferralsInfoResponse.referral.size()
+def expectedCountSAO=assigmentsCount+referralsCount
+
+log.info " getAssignmentsReferralsInfo вернул " + countInfo + " getAssignmentsInfo вернул " + assigmentsCount + " getReferralsInfo вернул " +  referralsCount + " ожидаемое значение " +  expectedCountSAO
+checkParameter("AssignmentsReferralsCount",expectedCountSAO, countInfo)
+
+</script></con:config></con:testStep><con:testStep type="groovy" name="Проверить маппинг assigment" id="9a093d2b-cdae-4080-9a5a-d6d0c91e1611"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+import groovy.xml.XmlSlurper
+import java.util.ArrayList
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
+def checkParameter(String paramName, def expValue, def currentValue){
+	if(currentValue != expValue){ 
+		testRunner.fail()
+		log.info("значение "+paramName+" не соответствует ожидаемому. ожидаемое ="+expValue.toString()+", фактическое ="+currentValue.toString())
+	}
+}
+
+def getAssignmentsReferralsInfoResponse = context.expand('${getAssignmentsReferralsInfo#Response}')
+def slurperJson = new JsonSlurper()
+def getAssignmentsReferralsInfo = slurperJson.parseText(getAssignmentsReferralsInfoResponse)
+def getAssignmentsInfoSAOResponse = context.expand('${getAssignmentsInfo#Response}')
+getAssignmentsInfoSAO = new XmlSlurper().parseText(getAssignmentsInfoSAOResponse)
+
+countInfo=getAssignmentsReferralsInfo.payload.arInfo.assignments.items.size()
+
+assigmentsCount=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment.size()
+
+checkParameter("count", assigmentsCount, countInfo)
+
+assigmentsINFO=getAssignmentsReferralsInfo.payload.arInfo.assignments.items
+
+assigmentsSAO=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment
+
+assigmentsSAO.sort {it.period.dateTo} // ментод принимает на вход лямбду в фигурных скобках. лябда - это функция которую можно передать в аргументы функции
+// в данной ситуации в лямбде  передается функция которая указывает как происходит сортировка по какому полю так можно сказать
+// it это над кем вызывается функция. В данной ситуации у нас массив ассайментов и вот эта функция вызывается над каждым асайментом и в итоге сортирует массв
+
+log.info  assigmentsSAO.getClass()
+
+for (int i=1; i&lt;assigmentsINFO.size(); i++){
+	if(assigmentsINFO[i-1].period.dateTo> assigmentsINFO[i].period.dateTo){
+		testRunner.fail(" не отсортированы по дате окончания ")
+	}
+}
+
+assert assigmentsINFO.size() ==assigmentsSAO.size()
+
+for (int i=0; i&lt;assigmentsINFO.size(); i++){
+	def assigmentSAO=assigmentsSAO[i]// текущий ассаймент из хмл всевсе все взяли из хмл (что внутри ассаймента)
+	def assigmentINFO=assigmentsINFO[i]// текущий ассайент из джейсона
+	appointmentIdINFO=assigmentINFO.appointmentId? assigmentINFO.appointmentId : null// тернаный оператор. если assigmentINFO.appointmentId не нулл то берем  assigmentINFO.appointmentId иначеnull 
+	appointmentIdSAO=assigmentSAO.appointmentId? assigmentSAO.appointmentId.toLong() : null// здест  тернарный оператор действительно имеет смысл потому что надо вызвать тулонг только есть поле не нулл
+	log.info assigmentINFO.moId
+	log.info assigmentSAO.moId
+	assert assigmentINFO.moId==assigmentSAO.moId.toLong()
+	assert assigmentINFO.toBM.id==assigmentSAO.toBM.id.toLong()
+	assert assigmentINFO.toBM.name==assigmentSAO.toBM.name.toString()
+	assert assigmentINFO.toBM.self==assigmentSAO.toBM.self.toBoolean()
+	assert appointmentIdINFO==appointmentIdSAO
+	
+	def registryEntriesINFO=assigmentINFO.registryEntry
+	def registryEntriesSAO=assigmentSAO.registryEntry
+	
+	assert registryEntriesINFO.size() ==registryEntriesSAO.size() 
+	
+	for (int m=0; m&lt;registryEntriesSAO.size(); m++){
+		registryEntryINFO=registryEntriesINFO[m]
+		registryEntrySAO=registryEntriesSAO[m]
+		log.info  registryEntryINFO.entryId
+		assert registryEntryINFO.entryId==registryEntrySAO.entryId.toLong()
+		assert registryEntryINFO.laboratoryId==registryEntrySAO.laboratoryId.toLong()
+		assert registryEntryINFO.laboratoryName==registryEntrySAO.laboratoryName.toString()
+		assert registryEntryINFO.biomaterialId==registryEntrySAO.biomaterialId.toLong()
+		assert registryEntryINFO.biomaterialName==registryEntrySAO.biomaterialName.toString()
+		assert registryEntryINFO.hasMemo==registryEntrySAO.hasMemo.toBoolean()
+	}
+}
+
+</script></con:config></con:testStep><con:testStep type="groovy" name="Проверить маппинг refferal" id="ae81a0ad-c147-426e-8f8b-4059bc8f5aff"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+import groovy.xml.XmlSlurper
+import java.util.ArrayList
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+def getAssignmentsReferralsInfoResponse = context.expand('${getAssignmentsReferralsInfo#Response}')
+def slurperJson = new JsonSlurper()
+def getAssignmentsReferralsInfo = slurperJson.parseText(getAssignmentsReferralsInfoResponse)
+def getReferralsInfoSAOResponse = context.expand('${getReferralsInfo#Response}')
+getReferralsInfoSAO = new XmlSlurper().parseText(getReferralsInfoSAOResponse)
+def countInfo=getAssignmentsReferralsInfo.payload.arInfo.referrals.items.size()
+def referralsCount=getReferralsInfoSAO.Body.getReferralsInfoResponse.referral.size()
+
+assert countInfo==referralsCount
+
+def referralsINFO=getAssignmentsReferralsInfo.payload.arInfo.referrals.items
+def referralsSAO=getReferralsInfoSAO.Body.getReferralsInfoResponse.referral
+
+referralsSAO.sort {it.endTime}
+newSAO=[]
+referralsSAO.each{ sao ->
+	dateString=sao.endTime.toString()
+	 LocalDate newDate = LocalDate.parse(dateString, formatter)
+	map=[id:sao.id.toLong(),endTime:newDate]
+	newSAO &lt;&lt; map
+}
+
+for (int i=1; i&lt;countInfo; i++){
+	if(referralsINFO[i-1].endTime> referralsINFO[i].endTime){
+		testRunner.fail(" не отсортированы по датеокончания ")
+	}
+}
+
+
+newSAO.sort {it.endTime}
+newSAO.each{
+	log.info "newSAO "+it
+}
+
+for (int i=0; i&lt;countInfo; i++){
+	log.info "зашли в цикл "+i
+	referralSAO=[]
+	for (int k=0; k&lt;countInfo;k++){
+		log.info "сравниваю  referralsINFO "+i+" "+referralsINFO[i].id+" и referralsSAO "+k+" "+referralsSAO[k].id
+		if(referralsINFO[i].id.toLong()==referralsSAO[k].id.toLong()){
+			referralSAO=referralsSAO[k]
+			break
+		}
+		
+	}
+	referralINFO=referralsINFO[i]
+	invalidINFO=referralINFO.invalid? referralINFO.invalid : null
+	invalidSAO=referralSAO.invalid? referralSAO.invalid.toLong() : null
+	commentINFO=referralINFO.comment ? referralINFO.comment : null
+	commentSAO=referralSAO.comment.toString() !='' ? referralSAO.comment.toString() : null
+	lpuIdINFO=referralINFO.lpuId ? referralINFO.lpuId : null
+	lpuIdSAO=referralSAO.lpuId ? referralSAO.lpuId.toLong() : null
+	lpuNameINFO=referralINFO.lpuName ? referralINFO.lpuName : null
+	lpuNameSAO=referralSAO.lpuName.toString() !='' ? referralSAO.lpuName.toString() : null
+	availableResourceIdINFO=referralINFO.availableResourceId ? referralINFO.availableResourceId : null
+	availableResourceIdSAO=referralSAO.availableResourceId ? referralSAO.availableResourceId.toLong() : null
+	log.info i
+	log.info "referralINFO "+ referralINFO.id
+	log.info "referralSAO "+referralSAO.id
+	assert referralINFO.id.toLong()==referralSAO.id.toLong()
+	assert invalidINFO==invalidSAO
+	assert referralINFO.startTime==referralSAO.startTime.toString()
+	assert referralINFO.endTime==referralSAO.endTime.toString()
+	assert referralINFO.type==referralSAO.type.toString()
+	assert lpuIdINFO==lpuIdSAO
+	assert lpuNameINFO==lpuNameSAO
+	assert availableResourceIdINFO==availableResourceIdSAO
+	assert referralINFO.countActiveAppointment.toLong()==referralSAO.countActiveAppointment.toLong()
+	assert referralINFO.countAppointmentWithReceptionFact.toLong()==referralSAO.countAppointmentWithReceptionFact.toLong()
+	
+	if(referralINFO.type=='REF_TO_DOCTOR'){
+		toDoctorINFO=referralINFO.toDoctor
+		toDoctorSAO=referralSAO.toDoctor
+		doctorFioNameINFO=referralINFO.doctorFioName ? referralINFO.doctorFioName : null
+		doctorFioNameSAO=referralSAO.doctorFioName.toString() !='' ? referralSAO.doctorFioName.toString() : null
+		assert toDoctorINFO.specialityId== toDoctorSAO.specialityId.toLong()
+		assert toDoctorINFO.specialityName== toDoctorSAO.specialityName.toString()
+		assert toDoctorINFO.receptionTypeId== toDoctorSAO.receptionTypeId.toLong()
+		assert doctorFioNameINFO == doctorFioNameSAO
+	}
+	
+	if(referralINFO.type=='REF_TO_LDP'){
+		toLdpINFO=referralINFO.toLdp
+		toLdpSAO=referralSAO.toLdp
+		countAssignmentProceduresINFO=referralINFO.countAssignmentProcedures ? referralINFO.countAssignmentProcedures : null
+		countAssignmentProceduresSAO=referralSAO.countAssignmentProcedures.toString() !='' ? referralSAO.countAssignmentProcedures.toString() : null
+		assert toLdpINFO.ldpTypeId== toLdpSAO.ldpTypeId.toLong()
+		assert toLdpINFO.ldpTypeName== toLdpSAO.ldpTypeName.toString()
+		assert countAssignmentProceduresINFO == countAssignmentProceduresSAO
+	}
+	log.info "успешно проверено направление №"+ referralINFO.id
+}
+
+log.info "end."
+</script></con:config></con:testStep><con:properties><con:property><con:name>omsNumber</con:name><con:value>7700007178231039</con:value></con:property><con:property><con:name>birthDate</con:name><con:value>1939-10-23</con:value></con:property></con:properties></con:testCase><con:testCase id="c76f2cb4-a693-44b7-bf12-4c49e6511f16" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="АС1. Сервис ЕМИАС.Самозапись.Оркестратор вернул ошибку 500. Ошибка getReferralsInfo" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getAssignmentsReferralsInfo" id="8a84af19-86cd-4556-bd85-381847a93f5f"><con:settings/><con:config service="http://application-emiasinfo1.dev-emias.emias.ru" resourcePath="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAssignmentsReferralsInfo" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://application-emiasinfo1.dev-emias.emias.ru</con:endpoint><con:request/><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="edeaae88-4cbf-4d39-b8f8-6d1676b57995" name="Valid HTTP Status Codes =200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="Mock-saOrchestrator" value="${#Project#Mock}/448304"/>
+  <con:entry key="omsNumber" value="${#TestCase#omsNumber}"/>
+  <con:entry key="birthDate" value="${#TestCase#birthDate}"/>
+</con:parameters><con:parameterOrder><con:entry>omsNumber</con:entry><con:entry>birthDate</con:entry><con:entry>Mock-saOrchestrator</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>omsNumber</con:name><con:value>7700007178231039</con:value></con:property><con:property><con:name>birthDate</con:name><con:value>1939-10-23</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>Mock</con:name><con:value>http://application-mock.dev-emias.emias.ru/mock</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
