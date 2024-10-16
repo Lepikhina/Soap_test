@@ -2744,6 +2744,22 @@ def assigmentsCount=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assign
 def referralsCount=getReferralsInfoSAO.Body.getReferralsInfoResponse.referral.size()
 def expectedCountSAO=assigmentsCount+referralsCount
 
+def assigmentsSAO=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment
+
+for (int i=0; i&lt;assigmentsSAO.size(); i++){
+	def assigmentSAO=assigmentsSAO[i]
+	def appointmentIdSAO=assigmentSAO.appointmentId? assigmentSAO.appointmentId.toLong() : null
+	def appointmentOpenDateSAO=  assigmentSAO.appointmentOpenDate != null ? assigmentSAO.appointmentOpenDate.toLong(): null
+	log.info  appointmentIdSAO
+	log.info assigmentSAO.appointmentOpenDatet.toString()
+	log.info  appointmentOpenDateSAO
+	
+	if (appointmentIdSAO != null | appointmentOpenDateSAO != null) {
+		log.info "вошли в цикл"
+		expectedCountSAO=expectedCountSAO-1
+		}
+	}
+
 log.info " getAssignmentsReferralsInfo вернул " + countInfo + " getAssignmentsInfo вернул " + assigmentsCount + " getReferralsInfo вернул " +  referralsCount + " ожидаемое значение " +  expectedCountSAO
 checkParameter("AssignmentsReferralsCount",expectedCountSAO, countInfo)
 
@@ -2752,6 +2768,8 @@ import groovy.xml.XmlSlurper
 import java.util.ArrayList
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.util.Date
+import java.text.SimpleDateFormat
 
 def checkParameter(String paramName, def expValue, def currentValue){
 	if(currentValue != expValue){ 
@@ -2765,11 +2783,6 @@ def slurperJson = new JsonSlurper()
 def getAssignmentsReferralsInfo = slurperJson.parseText(getAssignmentsReferralsInfoResponse)
 def getAssignmentsInfoSAOResponse = context.expand('${getAssignmentsInfo#Response}')
 getAssignmentsInfoSAO = new XmlSlurper().parseText(getAssignmentsInfoSAOResponse)
-
-def countInfo=getAssignmentsReferralsInfo.payload.arInfo.assignments.items.size()
-def assigmentsCount=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment.size()
-
-checkParameter("count", assigmentsCount, countInfo)
 
 def assigmentsINFO=getAssignmentsReferralsInfo.payload.arInfo.assignments.items
 def assigmentsSAO=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment
@@ -2792,19 +2805,21 @@ for (int i=0; i&lt;assigmentsINFO.size(); i++){
 	def assigmentINFO=assigmentsINFO[i]// текущий ассайент из джейсона
 	def appointmentIdINFO=assigmentINFO.appointmentId? assigmentINFO.appointmentId : null// тернаный оператор. если assigmentINFO.appointmentId не нулл то берем  assigmentINFO.appointmentId иначеnull 
 	def appointmentIdSAO=assigmentSAO.appointmentId? assigmentSAO.appointmentId.toLong() : null// здест  тернарный оператор действительно имеет смысл потому что надо вызвать тулонг только есть поле не нулл
-	
+	def appointmentOpenDateINFO=assigmentINFO.appointmentOpenDate? assigmentINFO.appointmentOpenDate : null
+	def appointmentOpenDateSAO=  assigmentSAO.appointmentOpenDate!= null  ? assigmentSAO.appointmentOpenDate.toLong(): null
 	checkParameter("moid", assigmentSAO.moId.toLong(), assigmentINFO.moId)
 	checkParameter("toBM.id", assigmentSAO.toBM.id.toLong(), assigmentINFO.toBM.id)
 	checkParameter("toBM.name", assigmentSAO.toBM.name.toString(), assigmentINFO.toBM.name)
 	checkParameter("toBM.self", assigmentSAO.toBM.self.toBoolean(), assigmentINFO.toBM.self)
 	checkParameter("appointmentId", appointmentIdSAO, appointmentIdINFO)
 	checkParameter("appointmentId", appointmentIdSAO, appointmentIdINFO)
-	log.info assigmentSAO.period.dateFrom.toString() +   assigmentINFO.period.dateFrom
+	//log.info assigmentSAO.period.dateFrom.toString() +   assigmentINFO.period.dateFrom
+	//def date = Date.parse("yyyy-MM-dd", assigmentSAO.period.dateFrom)
 	checkParameter("period.dateFrom", assigmentSAO.period.dateFrom.toString(),  assigmentINFO.period.dateFrom)
 	checkParameter("period.dateTo", assigmentSAO.period.dateTo.toString(),  assigmentINFO.period.dateTo)
 	checkParameter("active", assigmentSAO.active.toBoolean(), assigmentINFO.active)
 	checkParameter("appointmentAvailable", assigmentSAO.appointmentAvailable.toBoolean(), assigmentINFO.appointmentAvailable)
-	
+	checkParameter("appointmentOpenDate", appointmentOpenDateSAO, assigmentINFO.appointmentOpenDate)
 
 	def registryEntriesINFO=assigmentINFO.registryEntry
 	def registryEntriesSAO=assigmentSAO.registryEntry
@@ -2821,9 +2836,16 @@ for (int i=0; i&lt;assigmentsINFO.size(); i++){
 		checkParameter("biomaterialId", registryEntrySAO.biomaterialId.toLong(), registryEntryINFO.biomaterialId)
 		checkParameter("biomaterialName", registryEntrySAO.biomaterialName.toString(), registryEntryINFO.biomaterialName)
 		checkParameter("hasMemo", registryEntrySAO.hasMemo.toBoolean(), registryEntryINFO.hasMemo)
+		checkParameter("diagnosis.code", registryEntrySAO.diagnosis.code.toString(), registryEntryINFO.diagnosis.code)
+		checkParameter("diagnosis.name", registryEntrySAO.diagnosis.name.toString(), registryEntryINFO.diagnosis.name)
+		checkParameter("issuedDoctor.jobExecutionId", registryEntrySAO.issuedDoctor.jobExecutionId.toLong(), registryEntryINFO.issuedDoctor.jobExecutionId)
+		checkParameter("issuedDoctor.fio", registryEntrySAO.issuedDoctor.fio.toString(), registryEntryINFO.issuedDoctor.fio)
+		checkParameter("issuedDoctor.snils", registryEntrySAO.issuedDoctor.snils.toString(), registryEntryINFO.issuedDoctor.snils)
+		checkParameter("issuedDoctor.specialityId", registryEntrySAO.issuedDoctor.specialityId.toLong(), registryEntryINFO.issuedDoctor.specialityId)
+		checkParameter("issuedDoctor.specialityName", registryEntrySAO.issuedDoctor.specialityName.toString(), registryEntryINFO.issuedDoctor.specialityName)
 	}
 
-	
+	log.info "Проверено направление №"+ assigmentINFO.toBM.id
 }
 
 </script></con:config></con:testStep><con:testStep type="groovy" name="Проверить маппинг refferal" id="ae81a0ad-c147-426e-8f8b-4059bc8f5aff"><con:settings/><con:config><script>import groovy.json.JsonSlurper
@@ -2832,13 +2854,20 @@ import java.util.ArrayList
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
+def checkParameter(String paramName, def expValue, def currentValue){
+	if(currentValue != expValue){ 
+		testRunner.fail()
+		log.info("значение "+paramName+" не соответствует ожидаемому. ожидаемое ="+expValue.toString()+", фактическое ="+currentValue.toString())
+	}
+}
+
 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
 def getAssignmentsReferralsInfoResponse = context.expand('${getAssignmentsReferralsInfo#Response}')
 def slurperJson = new JsonSlurper()
 def getAssignmentsReferralsInfo = slurperJson.parseText(getAssignmentsReferralsInfoResponse)
 def getReferralsInfoSAOResponse = context.expand('${getReferralsInfo#Response}')
-getReferralsInfoSAO = new XmlSlurper().parseText(getReferralsInfoSAOResponse)
+def getReferralsInfoSAO = new XmlSlurper().parseText(getReferralsInfoSAOResponse)
 def countInfo=getAssignmentsReferralsInfo.payload.arInfo.referrals.items.size()
 def referralsCount=getReferralsInfoSAO.Body.getReferralsInfoResponse.referral.size()
 
@@ -2879,31 +2908,30 @@ for (int i=0; i&lt;countInfo; i++){
 		}
 		
 	}
-	referralINFO=referralsINFO[i]
-	invalidINFO=referralINFO.invalid? referralINFO.invalid : null
-	invalidSAO=referralSAO.invalid? referralSAO.invalid.toLong() : null
-	commentINFO=referralINFO.comment ? referralINFO.comment : null
-	commentSAO=referralSAO.comment.toString() !='' ? referralSAO.comment.toString() : null
-	lpuIdINFO=referralINFO.lpuId ? referralINFO.lpuId : null
-	lpuIdSAO=referralSAO.lpuId ? referralSAO.lpuId.toLong() : null
-	lpuNameINFO=referralINFO.lpuName ? referralINFO.lpuName : null
-	lpuNameSAO=referralSAO.lpuName.toString() !='' ? referralSAO.lpuName.toString() : null
-	availableResourceIdINFO=referralINFO.availableResourceId ? referralINFO.availableResourceId : null
-	availableResourceIdSAO=referralSAO.availableResourceId ? referralSAO.availableResourceId.toLong() : null
-	log.info i
-	log.info "referralINFO "+ referralINFO.id
-	log.info "referralSAO "+referralSAO.id
-	assert referralINFO.id.toLong()==referralSAO.id.toLong()
-	assert invalidINFO==invalidSAO
-	assert referralINFO.startTime==referralSAO.startTime.toString()
-	assert referralINFO.endTime==referralSAO.endTime.toString()
-	assert referralINFO.type==referralSAO.type.toString()
-	assert lpuIdINFO==lpuIdSAO
-	assert lpuNameINFO==lpuNameSAO
-	assert availableResourceIdINFO==availableResourceIdSAO
-	assert referralINFO.countActiveAppointment.toLong()==referralSAO.countActiveAppointment.toLong()
-	assert referralINFO.countAppointmentWithReceptionFact.toLong()==referralSAO.countAppointmentWithReceptionFact.toLong()
+	def referralINFO=referralsINFO[i]
+	def invalidINFO=referralINFO.invalid? referralINFO.invalid : null
+	def invalidSAO=referralSAO.invalid? referralSAO.invalid.toLong() : null
+	def commentINFO=referralINFO.comment ? referralINFO.comment : null
+	def commentSAO=referralSAO.comment.toString() !='' ? referralSAO.comment.toString() : null
+	def lpuIdINFO=referralINFO.lpuId ? referralINFO.lpuId : null
+	def lpuIdSAO=referralSAO.lpuId ? referralSAO.lpuId.toLong() : null
+	def lpuNameINFO=referralINFO.lpuName ? referralINFO.lpuName : null
+	def lpuNameSAO=referralSAO.lpuName.toString() !='' ? referralSAO.lpuName.toString() : null
+	def availableResourceIdINFO=referralINFO.availableResourceId ? referralINFO.availableResourceId : null
+	def availableResourceIdSAO=referralSAO.availableResourceId ? referralSAO.availableResourceId.toLong() : null
+
 	
+	checkParameter("id",referralSAO.id.toLong(), referralINFO.id)
+	checkParameter("id",invalidSAO, invalidINFO)
+	checkParameter("id",referralSAO.startTime.toString(), referralINFO.startTime)
+	checkParameter("id",referralSAO.endTime.toString(), referralINFO.endTime)
+	checkParameter("id",referralSAO.type.toString(),referralINFO.type)
+	checkParameter("id",lpuIdSAO, lpuIdINFO)
+	checkParameter("id",lpuNameSAO, lpuNameSAO)
+	checkParameter("id",availableResourceIdSAO, availableResourceIdINFO)
+	checkParameter("id",referralSAO.countActiveAppointment.toLong(), referralINFO.countActiveAppointment)
+	checkParameter("id",referralSAO.countAppointmentWithReceptionFact.toLong(),referralINFO.countAppointmentWithReceptionFact)
+
 	if(referralINFO.type=='REF_TO_DOCTOR'){
 		toDoctorINFO=referralINFO.toDoctor
 		toDoctorSAO=referralSAO.toDoctor
@@ -2916,7 +2944,7 @@ for (int i=0; i&lt;countInfo; i++){
 	}
 	
 	if(referralINFO.type=='REF_TO_LDP'){
-		toLdpINFO=referralINFO.toLdp
+		def toLdpINFO=referralINFO.toLdp
 		toLdpSAO=referralSAO.toLdp
 		countAssignmentProceduresINFO=referralINFO.countAssignmentProcedures ? referralINFO.countAssignmentProcedures : null
 		countAssignmentProceduresSAO=referralSAO.countAssignmentProcedures.toString() !='' ? referralSAO.countAssignmentProcedures.toString() : null
@@ -2924,10 +2952,9 @@ for (int i=0; i&lt;countInfo; i++){
 		assert toLdpINFO.ldpTypeName== toLdpSAO.ldpTypeName.toString()
 		assert countAssignmentProceduresINFO == countAssignmentProceduresSAO
 	}
-	log.info "успешно проверено направление №"+ referralINFO.id
+	
 }
 
-log.info "end."
 </script></con:config></con:testStep><con:properties><con:property><con:name>omsNumber</con:name><con:value>7757330889000627</con:value></con:property><con:property><con:name>birthDate</con:name><con:value>1966-02-10</con:value></con:property></con:properties></con:testCase><con:testCase id="c76f2cb4-a693-44b7-bf12-4c49e6511f16" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="448304_АС1. Сервис ЕМИАС.Самозапись.Оркестратор вернул ошибку 500. Ошибка getReferralsInfo" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getAssignmentsReferralsInfo" id="8a84af19-86cd-4556-bd85-381847a93f5f"><con:settings/><con:config service="http://application-emiasinfo1.dev-emias.emias.ru" resourcePath="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAssignmentsReferralsInfo" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request/><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="edeaae88-4cbf-4d39-b8f8-6d1676b57995" name="Valid HTTP Status Codes =200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="15b1690a-c076-4a25-90e2-f078319a3651" name="code=SA_SERVER_ERROR"><con:configuration><path>$.payload.arInfo.referrals.error.code</path><content>SA_SERVER_ERROR</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="d448913b-9412-4caa-ab6b-d4f4295080f1" name="description = Сервис Самозапись.Оркестратор не отвечает"><con:configuration><path>$.payload.arInfo.referrals.error.description</path><content>Сервис Самозапись.Оркестратор не отвечает</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="fe95c7c5-4e65-4c77-a5bb-dd13f2251a4a" name="type=TECHNICAL"><con:configuration><path>$.payload.arInfo.referrals.error.type</path><content>TECHNICAL</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="51cad66e-05a2-4476-8d59-df830421c75a" name="redderal.items пустой"><con:configuration><path>$.payload.arInfo.referrals.items</path><content>[]</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="58f6ef0e-ba90-44b4-adb3-70d8c0963240" name="JsonPath Count. assignments.items=1"><con:configuration><path>$.payload.arInfo.assignments.items</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
   <con:entry key="Mock-saOrchestrator" value="${#Project#Mock}/448304"/>
   <con:entry key="omsNumber" value="${#TestCase#omsNumber}"/>
