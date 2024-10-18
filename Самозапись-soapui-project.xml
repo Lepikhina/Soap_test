@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="c0c4617d-63d2-497d-a622-784d8a490a49" activeEnvironment="Default" name="Самозапись. МОЙ ТЕСТ" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="d485db65-d7bc-4737-a155-676b0fe80f25" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://application-emiasinfo1.dev-emias.emias.ru" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://application-emiasinfo1.dev-emias.emias.ru</con:endpoint></con:endpoints><con:resource name="" path="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" id="c974b0a1-b4d0-4d99-b372-05dcc44cb4b5"><con:settings/><con:parameters><con:parameter><con:name>omsNumber</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>birthDate</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>Mock-saOrchestrator</con:name><con:style>HEADER</con:style></con:parameter></con:parameters><con:method name="1" id="69c78538-7c4d-42de-a0b9-69509fbfc447" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>500 400 404</con:status><con:params/><con:element xmlns:get="http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo">get:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:get="http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo">get:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request/><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+<con:soapui-project id="c0c4617d-63d2-497d-a622-784d8a490a49" activeEnvironment="Default" name="ТЕСТ_Сервис &quot;Самозапись оркестратор&quot; (saOrchestrator)" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="d485db65-d7bc-4737-a155-676b0fe80f25" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://application-emiasinfo1.dev-emias.emias.ru" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://application-emiasinfo1.dev-emias.emias.ru</con:endpoint></con:endpoints><con:resource name="" path="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" id="c974b0a1-b4d0-4d99-b372-05dcc44cb4b5"><con:settings/><con:parameters><con:parameter><con:name>omsNumber</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>birthDate</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>Mock-saOrchestrator</con:name><con:style>HEADER</con:style></con:parameter></con:parameters><con:method name="1" id="69c78538-7c4d-42de-a0b9-69509fbfc447" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>500 400 404</con:status><con:params/><con:element xmlns:get="http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo">get:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:get="http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo">get:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request/><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
   <con:entry key="omsNumber" value="7700007178231039"/>
   <con:entry key="birthDate" value="1939-10-23"/>
 </con:parameters><con:parameterOrder><con:entry>omsNumber</con:entry><con:entry>birthDate</con:entry><con:entry>Mock-saOrchestrator</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:WsdlInterface" id="f83b2522-ebbe-413b-b133-b9f9d929a320" wsaVersion="NONE" name="SelfAppointmentServiceV5Binding" type="wsdl" bindingName="{http://impl.service.soap.emias.lanit.ru/v5/}SelfAppointmentServiceV5Binding" soapVersion="1_2" anonymous="optional" definition="http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?wsdl"><con:part><con:url>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SelfAppointmentService" targetNamespace="http://impl.service.soap.emias.lanit.ru/v5/" xmlns:api="http://api.service.soap.emias.lanit.ru/v5/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://impl.service.soap.emias.lanit.ru/v5/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -2680,10 +2680,7 @@
          <externalSystemId>?</externalSystemId>\r
       </v5:shiftAppointmentForGroup>\r
    </soap:Body>\r
-</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/shiftAppointmentForGroup"/></con:call></con:operation></con:interface><con:interface xsi:type="con:RestService" id="5bd3ee3c-5f1b-48b8-8c6d-7612db6f978c" wadlVersion="http://wadl.dev.java.net/2009/02" name="Самозапись. МОЙ ТЕСТ" type="rest" definitionUrl="ЭКГ" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints/></con:interface><con:testSuite id="24188b62-56b7-4f6e-8cf2-87c22db9ae80" name="getAssignmentsReferralsInfo"><con:description>TestSuite generated for REST Service [http://application-emiasinfo1.dev-emias.emias.ru]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e91baace-5876-4747-b387-b764acd3204a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Интеграционный тест" searchProperties="true"><con:description>TestCase generated for REST Resource [] located at [/api/v1/saOrchestrator/getAssignmentsReferralsInfo]</con:description><con:settings/><con:testStep type="restrequest" name="getAssignmentsReferralsInfo" id="725316a8-2fc0-411d-b276-b0932ffffbca"><con:settings/><con:config service="http://application-emiasinfo1.dev-emias.emias.ru" resourcePath="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAssignmentsReferralsInfo" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request>{"birthDate":"1939-10-23","omsNumber":"7700007178231039","patientId":"10166510"}</con:request><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="64da3482-cff6-4b93-a197-5a299fe58fb3" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
-  <con:entry key="omsNumber" value="${#TestCase#omsNumber}"/>
-  <con:entry key="birthDate" value="${#TestCase#birthDate}"/>
-</con:parameters><con:parameterOrder><con:entry>omsNumber</con:entry><con:entry>birthDate</con:entry><con:entry>Mock-saOrchestrator</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="request" name="getReferralsInfo" id="95adf56c-a907-4d9a-8c26-19c00a34ed6d"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SelfAppointmentServiceV5Binding</con:interface><con:operation>getReferralsInfo</con:operation><con:request name="getReferralsInfo" id="531eafe8-bfc5-411a-88fe-515e12d677a8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">
+</soap:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.service.soap.emias.lanit.ru/v5/SelfAppointmentServiceV5PT/shiftAppointmentForGroup"/></con:call></con:operation></con:interface><con:interface xsi:type="con:RestService" id="5bd3ee3c-5f1b-48b8-8c6d-7612db6f978c" wadlVersion="http://wadl.dev.java.net/2009/02" name="Самозапись. МОЙ ТЕСТ" type="rest" definitionUrl="ЭКГ" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints/></con:interface><con:testSuite id="24188b62-56b7-4f6e-8cf2-87c22db9ae80" name="getAssignmentsReferralsInfo"><con:description>TestSuite generated for REST Service [http://application-emiasinfo1.dev-emias.emias.ru]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e91baace-5876-4747-b387-b764acd3204a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Интеграционный тест" searchProperties="true"><con:description>TestCase generated for REST Resource [] located at [/api/v1/saOrchestrator/getAssignmentsReferralsInfo]</con:description><con:settings/><con:testStep type="request" name="getReferralsInfo" id="95adf56c-a907-4d9a-8c26-19c00a34ed6d"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SelfAppointmentServiceV5Binding</con:interface><con:operation>getReferralsInfo</con:operation><con:request name="getReferralsInfo" id="531eafe8-bfc5-411a-88fe-515e12d677a8"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">
 <soap:Header>
 <wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
 <wsse:UsernameToken>
@@ -2715,7 +2712,219 @@
          <externalSystemId>EIM</externalSystemId>
       </v5:getAssignmentsInfo>
    </soap:Body>
-</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="272dfba3-8fb7-41f1-b56b-6fee14c53c62"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="Проверить count" id="a083af7c-6346-45f5-8715-e5583f216fcf"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="272dfba3-8fb7-41f1-b56b-6fee14c53c62"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="restrequest" name="getAssignmentsReferralsInfo" id="725316a8-2fc0-411d-b276-b0932ffffbca"><con:settings/><con:config service="http://application-emiasinfo1.dev-emias.emias.ru" resourcePath="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAssignmentsReferralsInfo" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request>{"birthDate":"1939-10-23","omsNumber":"7700007178231039","patientId":"10166510"}</con:request><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="64da3482-cff6-4b93-a197-5a299fe58fb3" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="omsNumber" value="${#TestCase#omsNumber}"/>
+  <con:entry key="birthDate" value="${#TestCase#birthDate}"/>
+</con:parameters><con:parameterOrder><con:entry>omsNumber</con:entry><con:entry>birthDate</con:entry><con:entry>Mock-saOrchestrator</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Проверить маппинг refferal" id="ae81a0ad-c147-426e-8f8b-4059bc8f5aff"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+import groovy.xml.XmlSlurper
+import java.util.ArrayList
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
+def checkParameter(String paramName, def expValue, def currentValue){
+	if(currentValue != expValue){ 
+		testRunner.fail()
+		log.info("значение "+paramName+" не соответствует ожидаемому. ожидаемое ="+expValue.toString()+", фактическое ="+currentValue.toString())
+	}
+}
+
+
+def getAssignmentsReferralsInfoResponse = context.expand('${getAssignmentsReferralsInfo#Response}')
+def slurperJson = new JsonSlurper()
+def getAssignmentsReferralsInfo = slurperJson.parseText(getAssignmentsReferralsInfoResponse)
+def getReferralsInfoSAOResponse = context.expand('${getReferralsInfo#Response}')
+def getReferralsInfoSAO = new XmlSlurper().parseText(getReferralsInfoSAOResponse)
+
+def referralsINFO=getAssignmentsReferralsInfo.payload.arInfo.referrals.items
+def referralsSAO=getReferralsInfoSAO.Body.getReferralsInfoResponse.referral
+
+if ( referralsINFO.appointmentOpenDate==null){       //сортировка активных направлений без appointmentOpenDate
+for (int i=1; i&lt;referralsINFO.size(); i++){
+	if(referralsINFO[i-1].endTime>referralsINFO[i].endTime){
+		testRunner.fail(" не отсортированы по дате окончания ")
+	}
+}
+}
+
+if ( referralsINFO.appointmentOpenDate!=null){       //сортировка отложенных направлений с appointmentOpenDate
+for (int i=1; i&lt;referralsINFO.size(); i++){
+	if(referralsINFO[i-1].appointmentOpenDate>referralsINFO[i].appointmentOpenDate){
+		testRunner.fail(" не отсортированы по дате окончания ")
+	}
+}
+}
+
+checkParameter("count", referralsSAO.size(), referralsINFO.size())
+
+for (int i=0; i&lt;referralsINFO.size(); i++){
+	def referralSAO=[]
+	for (int k=0; k&lt;referralsINFO.size();k++){
+		
+		if(referralsINFO[i].id.toLong()==referralsSAO[k].id.toLong()){
+			referralSAO=referralsSAO[k]
+			break
+		}
+		
+	}
+	
+	def referralINFO=referralsINFO[i]
+	//def referralSAO= referralsSAO[i]
+	def commentINFO=referralINFO.comment ? referralINFO.comment : null
+	def commentSAO=referralSAO.comment.toString() !='' ? referralSAO.comment.toString() : null
+	def lpuIdINFO=referralINFO.lpuId ? referralINFO.lpuId : null
+	def lpuIdSAO=referralSAO.lpuId ? referralSAO.lpuId.toLong() : null
+	def lpuNameINFO=referralINFO.lpuName ? referralINFO.lpuName : null
+	def lpuNameSAO=referralSAO.lpuName.toString() !='' ? referralSAO.lpuName.toString() : null
+	def availableResourceIdINFO=referralINFO.availableResourceId ? referralINFO.availableResourceId : null
+	def availableResourceIdSAO=referralSAO.availableResourceId ? referralSAO.availableResourceId.toLong() : null
+	def invalidINFO=referralINFO.invalid? referralINFO.invalid : null
+	def invalidSAO=referralSAO.invalid? referralSAO.invalid.toLong() : null
+	def referralOpenDateINFO=referralINFO.referralOpenDate? referralINFO.invalid : null
+	def referralOpenDateSAO =  referralSAO.appointmentOpenDate.toString() !=''  ? referralSAO.appointmentOpenDate.toString() : null
+	checkParameter("id",referralSAO.id.toLong(), referralINFO.id)
+	checkParameter("number",referralSAO.number.toString(), referralINFO.number)
+	checkParameter("comment",commentSAO, commentINFO)
+	checkParameter("startTime",referralSAO.startTime.toString(), referralINFO.startTime)
+	checkParameter("endTime",referralSAO.endTime.toString(), referralINFO.endTime)
+	checkParameter("type",referralSAO.type.toString(),referralINFO.type)
+	checkParameter("lpuId",lpuIdSAO, lpuIdINFO)
+	checkParameter("lpuName",lpuNameSAO, lpuNameINFO)
+	checkParameter("diagnosis.code", referralSAO.diagnosis.code.toString(), referralINFO.diagnosis.code)
+	checkParameter("diagnosis.name", referralSAO.diagnosis.name.toString(),referralINFO.diagnosis.name)
+	checkParameter("issuedDoctor.jobExecutionId", referralSAO.issuedDoctor.jobExecutionId.toLong(), referralINFO.issuedDoctor.jobExecutionId)
+	checkParameter("issuedDoctor.fio", referralSAO.issuedDoctor.fio.toString(), referralINFO.issuedDoctor.fio)
+	checkParameter("issuedDoctor.snils", referralSAO.issuedDoctor.snils.toString(), referralINFO.issuedDoctor.snils)
+	checkParameter("issuedDoctor.specialityId", referralSAO.issuedDoctor.specialityId.toLong(), referralINFO.issuedDoctor.specialityId)
+	checkParameter("issuedDoctor.specialityName", referralSAO.issuedDoctor.specialityName.toString(), referralINFO.issuedDoctor.specialityName)
+	checkParameter("availableResourceId",availableResourceIdSAO, availableResourceIdINFO)
+	checkParameter("countActiveAppointment",referralSAO.countActiveAppointment.toLong(), referralINFO.countActiveAppointment)
+	checkParameter("countAppointmentWithReceptionFact",referralSAO.countAppointmentWithReceptionFact.toLong(),referralINFO.countAppointmentWithReceptionFact)
+	checkParameter("invalid",invalidSAO, invalidINFO)
+
+	if(referralINFO.type=='REF_TO_DOCTOR'){
+		def doctorFioINFO=referralINFO.toDoctor.doctorFio ? referralINFO.toDoctor.doctorFio : null
+		def doctorFioSAO=referralSAO.toDoctor.doctorFio.toString() !='' ? referralSAO.toDoctor.doctorFio.toString() : null
+		checkParameter("specialityId",referralSAO.toDoctor.specialityId.toLong(), referralINFO.toDoctor.specialityId)
+		checkParameter("specialityName",referralSAO.toDoctor.specialityName.toString(), referralINFO.toDoctor.specialityName)
+		checkParameter("receptionTypeId",referralSAO.toDoctor.receptionTypeId.toLong(), referralINFO.toDoctor.receptionTypeId)
+		checkParameter("doctorFio",doctorFioSAO, doctorFioINFO)
+		
+	}
+	
+	if(referralINFO.type=='REF_TO_LDP'){
+		def countAssignmentProceduresINFO=referralINFO.toLdp.countAssignmentProcedures ? referralINFO.toLdp.countAssignmentProcedures : null
+		def countAssignmentProceduresSAO=referralSAO.toLdp.countAssignmentProcedures.toInteger() !='' ? referralSAO.toLdp.countAssignmentProcedures.toInteger() : null
+		
+		checkParameter("ldpTypeId", referralSAO.toLdp.ldpTypeId.toLong(),  referralINFO.toLdp.ldpTypeId)
+		checkParameter("ldpTypeName", referralSAO.toLdp.ldpTypeName.toString(), referralINFO.toLdp.ldpTypeName.trim())
+		checkParameter("countAssignmentProcedures",countAssignmentProceduresSAO, countAssignmentProceduresINFO)
+	}
+	log.info "Проверено назначение №"+ i + " c referralINFO.id = "+  referralINFO.id
+}
+
+</script></con:config></con:testStep><con:testStep type="groovy" name="Проверить маппинг assigment" id="9a093d2b-cdae-4080-9a5a-d6d0c91e1611"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+import groovy.xml.XmlSlurper
+import java.util.ArrayList
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.Date
+import java.text.SimpleDateFormat
+
+def checkParameter(String paramName, def expValue, def currentValue){
+	if(currentValue != expValue){ 
+		testRunner.fail()
+		log.info("значение "+paramName+" не соответствует ожидаемому. ожидаемое ="+expValue.toString()+", фактическое ="+currentValue.toString())
+	}
+}
+
+def getAssignmentsReferralsInfoResponse = context.expand('${getAssignmentsReferralsInfo#Response}')
+def slurperJson = new JsonSlurper()
+def getAssignmentsReferralsInfo = slurperJson.parseText(getAssignmentsReferralsInfoResponse)
+def getAssignmentsInfoSAOResponse = context.expand('${getAssignmentsInfo#Response}')
+def getAssignmentsInfoSAO = new XmlSlurper().parseText(getAssignmentsInfoSAOResponse)
+
+def assigmentsINFO=getAssignmentsReferralsInfo.payload.arInfo.assignments.items
+def assigmentsSAO=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment
+def finalAssigmentsSAOsize=assigmentsSAO.size() //переменная для подсчета размера массива без appointmentId
+ 
+
+for (int i=1; i&lt;assigmentsINFO.size(); i++){
+	if(assigmentsINFO[i-1].period.dateTo> assigmentsINFO[i].period.dateTo){
+		testRunner.fail(" не отсортированы по дате окончания ")
+	}
+}
+
+for (int i=0; i&lt;assigmentsSAO.size(); i++){// уменьшаем счетчик кол-ва назначений если есть  appointmentId
+	def assigmentSAO=assigmentsSAO[i]
+	def appointmentIdSAO=assigmentSAO.appointmentId? assigmentSAO.appointmentId.toLong() : null
+	
+	if (appointmentIdSAO != null) {
+		log.info "В списке есть запись с appointmentId. Количество ожидаемых  направлений уменьшилось на 1"
+		finalAssigmentsSAOsize--
+		}
+	}
+	
+checkParameter ("sizeAssigments",finalAssigmentsSAOsize, assigmentsINFO.size()) //Проверяем размеры массивов с учетом наличия appointmentId
+
+  for (int i=0; i&lt;assigmentsINFO.size(); i++){
+	def assigmentSAO=[]
+	for (int k=0; k&lt;assigmentsSAO.size();k++){
+		if(assigmentsINFO[i].toBM.id.toLong()==assigmentsSAO[k].toBM.id.toLong()){
+			assigmentSAO=assigmentsSAO[k]
+			break
+		}
+	}
+			
+
+	def assigmentINFO=assigmentsINFO[i]
+	def appointmentIdINFO=assigmentINFO.appointmentId? assigmentINFO.appointmentId : null
+	def appointmentIdSAO=assigmentSAO.appointmentId? assigmentSAO.appointmentId.toLong() : null
+	def appointmentOpenDateINFO=assigmentINFO.appointmentOpenDate? assigmentINFO.appointmentOpenDate : null
+	def appointmentOpenDateSAO =  assigmentSAO.appointmentOpenDate.toString() !=''  ? assigmentSAO.appointmentOpenDate.toString() : null
+	def toBMselfSAO =  assigmentSAO.toBM.self  ? assigmentSAO.toBM.self.toBoolean() : null
+
+	checkParameter("moid", assigmentSAO.moId.toLong(), assigmentINFO.moId)
+	checkParameter("toBM.id", assigmentSAO.toBM.id.toLong(), assigmentINFO.toBM.id)
+	checkParameter("toBM.name", assigmentSAO.toBM.name.toString(), assigmentINFO.toBM.name)
+	checkParameter("toBM.self",  toBMselfSAO,assigmentINFO.toBM.self)
+	checkParameter("appointmentId", appointmentIdSAO, appointmentIdINFO)
+	checkParameter("period.dateFrom", assigmentSAO.period.dateFrom.toString(),  assigmentINFO.period.dateFrom)
+	checkParameter("period.dateTo", assigmentSAO.period.dateTo.toString(),  assigmentINFO.period.dateTo)
+	checkParameter("active", assigmentSAO.active.toBoolean(), assigmentINFO.active)
+	checkParameter("appointmentAvailable", assigmentSAO.appointmentAvailable.toBoolean(), assigmentINFO.appointmentAvailable)
+	checkParameter("appointmentOpenDate", appointmentOpenDateSAO, assigmentINFO.appointmentOpenDate)
+
+	def registryEntriesINFO=assigmentINFO.registryEntry
+	def registryEntriesSAO=assigmentSAO.registryEntry
+	
+	checkParameter("sizeRegistryEntries", registryEntriesSAO.size(),  registryEntriesINFO.size())
+	
+	for (int m=0; m&lt;registryEntriesSAO.size(); m++){
+		def registryEntryINFO=registryEntriesINFO[m]
+		def registryEntrySAO=registryEntriesSAO[m]
+		def snilsINFO= registryEntryINFO.issuedDoctor.snils?  registryEntryINFO.issuedDoctor.snils : null
+		def snilsSAO =   registryEntryINFO.issuedDoctor.snils.toString() !=''  ? registryEntryINFO.issuedDoctor.snils.toString() : null
+	
+		checkParameter("entryId", registryEntrySAO.entryId.toLong(), registryEntryINFO.entryId)
+		checkParameter("laboratoryId", registryEntrySAO.laboratoryId.toLong(), registryEntryINFO.laboratoryId)
+		checkParameter("laboratoryName", registryEntrySAO.laboratoryName.toString(), registryEntryINFO.laboratoryName)
+		checkParameter("biomaterialId", registryEntrySAO.biomaterialId.toLong(), registryEntryINFO.biomaterialId)
+		checkParameter("biomaterialName", registryEntrySAO.biomaterialName.toString(), registryEntryINFO.biomaterialName)
+		checkParameter("hasMemo", registryEntrySAO.hasMemo.toBoolean(), registryEntryINFO.hasMemo)
+		checkParameter("diagnosis.code", registryEntrySAO.diagnosis.code.toString(), registryEntryINFO.diagnosis.code)
+		checkParameter("diagnosis.name", registryEntrySAO.diagnosis.name.toString(), registryEntryINFO.diagnosis.name)
+		checkParameter("issuedDoctor.jobExecutionId", registryEntrySAO.issuedDoctor.jobExecutionId.toLong(), registryEntryINFO.issuedDoctor.jobExecutionId)
+		checkParameter("issuedDoctor.fio", registryEntrySAO.issuedDoctor.fio.toString(), registryEntryINFO.issuedDoctor.fio)
+		checkParameter("issuedDoctor.snils", snilsSAO, snilsINFO)
+		checkParameter("issuedDoctor.specialityId", registryEntrySAO.issuedDoctor.specialityId.toLong(), registryEntryINFO.issuedDoctor.specialityId)
+		checkParameter("issuedDoctor.specialityName", registryEntrySAO.issuedDoctor.specialityName.toString(), registryEntryINFO.issuedDoctor.specialityName)
+	}
+
+	log.info "Проверено назначение №"+ assigmentINFO.toBM.id
+}
+	
+	
+	</script></con:config></con:testStep><con:testStep type="groovy" name="Проверить count" id="a083af7c-6346-45f5-8715-e5583f216fcf"><con:settings/><con:config><script>import groovy.json.JsonSlurper
 import groovy.xml.XmlSlurper
 import java.util.ArrayList
 import java.time.LocalDate
@@ -2754,7 +2963,7 @@ for (int i=0; i&lt;assigmentsSAO.size(); i++){
 	
 	if (appointmentIdSAO != null || appointmentOpenDateSAO!= null) {
 		log.info "вошли в цикл"
-		expectedCountSAO=expectedCountSAO-1
+		expectedCountSAO--
 		}
 	}
 
@@ -2762,272 +2971,37 @@ def referralsSAO=getReferralsInfoSAO.Body.getReferralsInfoResponse.referral
 for (int i=0; i&lt;referralsSAO.size(); i++){
 	def referralSAO=referralsSAO[i]
 	def referralOpenDateSAO =  referralSAO.appointmentOpenDate.toString() !=''  ? referralSAO.appointmentOpenDate.toString() : null
-	log.info referralOpenDateSAO
+	
 	
 	if (referralOpenDateSAO!= null) {
 		log.info "вошли в цикл"
-		expectedCountSAO=expectedCountSAO-1
+		expectedCountSAO--
 		}
 	}
 log.info " getAssignmentsReferralsInfo вернул " + countInfo + " getAssignmentsInfo вернул " + assigmentsCount + " getReferralsInfo вернул " +  referralsCount + " ожидаемое значение " +  expectedCountSAO
 checkParameter("AssignmentsReferralsCount",expectedCountSAO, countInfo)
 
-</script></con:config></con:testStep><con:testStep type="groovy" name="Проверить маппинг assigment" id="9a093d2b-cdae-4080-9a5a-d6d0c91e1611"><con:settings/><con:config><script>import groovy.json.JsonSlurper
-import groovy.xml.XmlSlurper
-import java.util.ArrayList
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-import java.util.Date
-import java.text.SimpleDateFormat
-
-def checkParameter(String paramName, def expValue, def currentValue){
-	if(currentValue != expValue){ 
-		testRunner.fail()
-		log.info("значение "+paramName+" не соответствует ожидаемому. ожидаемое ="+expValue.toString()+", фактическое ="+currentValue.toString())
-	}
-}
-
-def getAssignmentsReferralsInfoResponse = context.expand('${getAssignmentsReferralsInfo#Response}')
-def slurperJson = new JsonSlurper()
-def getAssignmentsReferralsInfo = slurperJson.parseText(getAssignmentsReferralsInfoResponse)
-def getAssignmentsInfoSAOResponse = context.expand('${getAssignmentsInfo#Response}')
-getAssignmentsInfoSAO = new XmlSlurper().parseText(getAssignmentsInfoSAOResponse)
-
-def assigmentsINFO=getAssignmentsReferralsInfo.payload.arInfo.assignments.items
-def assigmentsSAO=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment
-
- 
-
-for (int i=1; i&lt;assigmentsINFO.size(); i++){
-	if(assigmentsINFO[i-1].period.dateTo> assigmentsINFO[i].period.dateTo){
-		testRunner.fail(" не отсортированы по дате окончания ")
-	}
-}
-assigmentsINFOsize= assigmentsINFO.size()+5
-checkParameter("sizeAssigments", assigmentsINFOsize,assigmentsSAO.size())
-
-  for (int i=0; i&lt;assigmentsINFO.size(); i++){
-	
-	def assigmentSAO=[]
-	for (int k=0; k&lt;assigmentsSAO.size();k++){
-
-		if(assigmentsINFO[i].toBM.id.toLong()==assigmentsSAO[k].toBM.id.toLong()){
-			assigmentSAO=assigmentsSAO[k]
-			break
-		}
-	}
-	//def assigmentSAO=assigmentsSAO[i]
-	def assigmentINFO=assigmentsINFO[i]
-	def appointmentIdINFO=assigmentINFO.appointmentId? assigmentINFO.appointmentId : null
-	def appointmentIdSAO=assigmentSAO.appointmentId? assigmentSAO.appointmentId.toLong() : null
-	def appointmentOpenDateINFO=assigmentINFO.appointmentOpenDate? assigmentINFO.appointmentOpenDate : null
-	def appointmentOpenDateSAO =  assigmentSAO.appointmentOpenDate.toString() !=''  ? assigmentSAO.appointmentOpenDate.toString() : null
-	checkParameter("moid", assigmentSAO.moId.toLong(), assigmentINFO.moId)
-	checkParameter("toBM.id", assigmentSAO.toBM.id.toLong(), assigmentINFO.toBM.id)
-	checkParameter("toBM.name", assigmentSAO.toBM.name.toString(), assigmentINFO.toBM.name)
-	checkParameter("toBM.self", assigmentSAO.toBM.self.toBoolean(), assigmentINFO.toBM.self)
-	checkParameter("appointmentId", appointmentIdSAO, appointmentIdINFO)
-	checkParameter("appointmentId", appointmentIdSAO, appointmentIdINFO)
-	checkParameter("period.dateFrom", assigmentSAO.period.dateFrom.toString(),  assigmentINFO.period.dateFrom)
-	checkParameter("period.dateTo", assigmentSAO.period.dateTo.toString(),  assigmentINFO.period.dateTo)
-	checkParameter("active", assigmentSAO.active.toBoolean(), assigmentINFO.active)
-	checkParameter("appointmentAvailable", assigmentSAO.appointmentAvailable.toBoolean(), assigmentINFO.appointmentAvailable)
-	checkParameter("appointmentOpenDate", appointmentOpenDateSAO, assigmentINFO.appointmentOpenDate)
-
-	def registryEntriesINFO=assigmentINFO.registryEntry
-	def registryEntriesSAO=assigmentSAO.registryEntry
-	
-	checkParameter("sizeRegistryEntries", registryEntriesSAO.size(),  registryEntriesINFO.size())
-	
-	for (int m=0; m&lt;registryEntriesSAO.size(); m++){
-		def registryEntryINFO=registryEntriesINFO[m]
-		def registryEntrySAO=registryEntriesSAO[m]
-		
-		checkParameter("entryId", registryEntrySAO.entryId.toLong(), registryEntryINFO.entryId)
-		checkParameter("laboratoryId", registryEntrySAO.laboratoryId.toLong(), registryEntryINFO.laboratoryId)
-		checkParameter("laboratoryName", registryEntrySAO.laboratoryName.toString(), registryEntryINFO.laboratoryName)
-		checkParameter("biomaterialId", registryEntrySAO.biomaterialId.toLong(), registryEntryINFO.biomaterialId)
-		checkParameter("biomaterialName", registryEntrySAO.biomaterialName.toString(), registryEntryINFO.biomaterialName)
-		checkParameter("hasMemo", registryEntrySAO.hasMemo.toBoolean(), registryEntryINFO.hasMemo)
-		checkParameter("diagnosis.code", registryEntrySAO.diagnosis.code.toString(), registryEntryINFO.diagnosis.code)
-		checkParameter("diagnosis.name", registryEntrySAO.diagnosis.name.toString(), registryEntryINFO.diagnosis.name)
-		checkParameter("issuedDoctor.jobExecutionId", registryEntrySAO.issuedDoctor.jobExecutionId.toLong(), registryEntryINFO.issuedDoctor.jobExecutionId)
-		checkParameter("issuedDoctor.fio", registryEntrySAO.issuedDoctor.fio.toString(), registryEntryINFO.issuedDoctor.fio)
-		checkParameter("issuedDoctor.snils", registryEntrySAO.issuedDoctor.snils.toString(), registryEntryINFO.issuedDoctor.snils)
-		checkParameter("issuedDoctor.specialityId", registryEntrySAO.issuedDoctor.specialityId.toLong(), registryEntryINFO.issuedDoctor.specialityId)
-		checkParameter("issuedDoctor.specialityName", registryEntrySAO.issuedDoctor.specialityName.toString(), registryEntryINFO.issuedDoctor.specialityName)
-	}
-
-	log.info "Проверено направление №"+ assigmentINFO.toBM.id
-}
-
-</script></con:config></con:testStep><con:testStep type="groovy" name="Проверить маппинг refferal" id="ae81a0ad-c147-426e-8f8b-4059bc8f5aff"><con:settings/><con:config><script>import groovy.json.JsonSlurper
-import groovy.xml.XmlSlurper
-import java.util.ArrayList
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-
-def checkParameter(String paramName, def expValue, def currentValue){
-	if(currentValue != expValue){ 
-		testRunner.fail()
-		log.info("значение "+paramName+" не соответствует ожидаемому. ожидаемое ="+expValue.toString()+", фактическое ="+currentValue.toString())
-	}
-}
-
-
-def getAssignmentsReferralsInfoResponse = context.expand('${getAssignmentsReferralsInfo#Response}')
-def slurperJson = new JsonSlurper()
-def getAssignmentsReferralsInfo = slurperJson.parseText(getAssignmentsReferralsInfoResponse)
-def getReferralsInfoSAOResponse = context.expand('${getReferralsInfo#Response}')
-def getReferralsInfoSAO = new XmlSlurper().parseText(getReferralsInfoSAOResponse)
-
-def referralsINFO=getAssignmentsReferralsInfo.payload.arInfo.referrals.items
-def referralsSAO=getReferralsInfoSAO.Body.getReferralsInfoResponse.referral
-
-for (int i=1; i&lt;referralsINFO.size(); i++){
-	if(referralsINFO[i-1].endTime> referralsINFO[i].endTime){
-		testRunner.fail(" не отсортированы по датеокончания ")
-	}
-}
-
-checkParameter("count", referralsSAO.size(), referralsINFO.size())
-
-for (int i=0; i&lt;referralsINFO.size(); i++){
-	def referralSAO=[]
-	for (int k=0; k&lt;referralsINFO.size();k++){
-		
-		if(referralsINFO[i].id.toLong()==referralsSAO[k].id.toLong()){
-			referralSAO=referralsSAO[k]
-			break
-		}
-		
-	}
-	
-	def referralINFO=referralsINFO[i]
-	//def referralSAO= referralsSAO[i]
-	def commentINFO=referralINFO.comment ? referralINFO.comment : null
-	def commentSAO=referralSAO.comment.toString() !='' ? referralSAO.comment.toString() : null
-	def lpuIdINFO=referralINFO.lpuId ? referralINFO.lpuId : null
-	def lpuIdSAO=referralSAO.lpuId ? referralSAO.lpuId.toLong() : null
-	def lpuNameINFO=referralINFO.lpuName ? referralINFO.lpuName : null
-	def lpuNameSAO=referralSAO.lpuName.toString() !='' ? referralSAO.lpuName.toString() : null
-	def availableResourceIdINFO=referralINFO.availableResourceId ? referralINFO.availableResourceId : null
-	def availableResourceIdSAO=referralSAO.availableResourceId ? referralSAO.availableResourceId.toLong() : null
-	def invalidINFO=referralINFO.invalid? referralINFO.invalid : null
-	def invalidSAO=referralSAO.invalid? referralSAO.invalid.toLong() : null
-	def referralOpenDateINFO=referralINFO.referralOpenDate? referralINFO.invalid : null
-	def referralOpenDateSAO =  referralSAO.appointmentOpenDate.toString() !=''  ? referralSAO.appointmentOpenDate.toString() : null
- 	log.info referralINFO.id
-	checkParameter("id",referralSAO.id.toLong(), referralINFO.id)
-	checkParameter("number",referralSAO.number.toString(), referralINFO.number)
-	checkParameter("comment",commentSAO, commentINFO)
-	checkParameter("startTime",referralSAO.startTime.toString(), referralINFO.startTime)
-	checkParameter("endTime",referralSAO.endTime.toString(), referralINFO.endTime)
-	checkParameter("type",referralSAO.type.toString(),referralINFO.type)
-	checkParameter("lpuId",lpuIdSAO, lpuIdINFO)
-	checkParameter("lpuName",lpuNameSAO, lpuNameINFO)
-	checkParameter("diagnosis.code", referralSAO.diagnosis.code.toString(), referralINFO.diagnosis.code)
-	checkParameter("diagnosis.name", referralSAO.diagnosis.name.toString(),referralINFO.diagnosis.name)
-	checkParameter("issuedDoctor.jobExecutionId", referralSAO.issuedDoctor.jobExecutionId.toLong(), referralINFO.issuedDoctor.jobExecutionId)
-	checkParameter("issuedDoctor.fio", referralSAO.issuedDoctor.fio.toString(), referralINFO.issuedDoctor.fio)
-	checkParameter("issuedDoctor.snils", referralSAO.issuedDoctor.snils.toString(), referralINFO.issuedDoctor.snils)
-	checkParameter("issuedDoctor.specialityId", referralSAO.issuedDoctor.specialityId.toLong(), referralINFO.issuedDoctor.specialityId)
-	checkParameter("issuedDoctor.specialityName", referralSAO.issuedDoctor.specialityName.toString(), referralINFO.issuedDoctor.specialityName)
-	checkParameter("availableResourceId",availableResourceIdSAO, availableResourceIdINFO)
-	checkParameter("countActiveAppointment",referralSAO.countActiveAppointment.toLong(), referralINFO.countActiveAppointment)
-	checkParameter("countAppointmentWithReceptionFact",referralSAO.countAppointmentWithReceptionFact.toLong(),referralINFO.countAppointmentWithReceptionFact)
-	checkParameter("invalid",invalidSAO, invalidINFO)
-
-	if(referralINFO.type=='REF_TO_DOCTOR'){
-		def doctorFioINFO=referralINFO.toDoctor.doctorFio ? referralINFO.toDoctor.doctorFio : null
-		def doctorFioSAO=referralSAO.toDoctor.doctorFio.toString() !='' ? referralSAO.toDoctor.doctorFio.toString() : null
-		checkParameter("specialityId",referralSAO.toDoctor.specialityId.toLong(), referralINFO.toDoctor.specialityId)
-		checkParameter("specialityName",referralSAO.toDoctor.specialityName.toString(), referralINFO.toDoctor.specialityName)
-		checkParameter("receptionTypeId",referralSAO.toDoctor.receptionTypeId.toLong(), referralINFO.toDoctor.receptionTypeId)
-		checkParameter("doctorFio",doctorFioSAO, doctorFioINFO)
-		
-	}
-	
-	if(referralINFO.type=='REF_TO_LDP'){
-		def countAssignmentProceduresINFO=referralINFO.toLdp.countAssignmentProcedures ? referralINFO.toLdp.countAssignmentProcedures : null
-		def countAssignmentProceduresSAO=referralSAO.toLdp.countAssignmentProcedures.toInteger() !='' ? referralSAO.toLdp.countAssignmentProcedures.toInteger() : null
-		
-		checkParameter("ldpTypeId", referralSAO.toLdp.ldpTypeId.toLong(),  referralINFO.toLdp.ldpTypeId)
-		checkParameter("ldpTypeName", referralSAO.toLdp.ldpTypeName.toString(), referralINFO.toLdp.ldpTypeName)
-		checkParameter("countAssignmentProcedures",countAssignmentProceduresSAO, countAssignmentProceduresINFO)
-	}
-	
-}
-
-</script></con:config></con:testStep><con:testStep type="groovy" name="Неполучившийся скрипт" id="7d57fdfa-b03c-407f-b870-5358809baac9" disabled="true"><con:settings/><con:config><script><![CDATA[import groovy.json.JsonSlurper
-import groovy.xml.XmlSlurper
-import java.util.ArrayList
-//import java.time.LocalDate
-//import java.time.format.DateTimeFormatter
-//import java.util.Date
-//import java.text.SimpleDateFormat
-
-def compareLists(List expextedList, List currentList, String name){
-    List logList=[]
-    List dif1=expextedList.collect()
-    List dif2=currentList.collect()
-    for(i=0; i<expextedList.size(); i++){
-        if(dif2.contains(expextedList.get(i))){
-            index=dif2.indexOf(expextedList.get(i))
-            dif2.remove(index)
-        }
-    }
-    for(i=0; i<currentList.size(); i++){
-        if(dif1.contains(currentList.get(i))){
-            index=dif1.indexOf(currentList.get(i))
-            dif1.remove(index)
-        }
-    }
-    if(dif1) logList << "ERROR: В списке "+name+" не хватает элементов в количестве= "+dif1.size()+", список этих элементов: "+dif1
-    if(dif2) logList << "ERROR: В списке "+name+" есть лишние элементы в количестве= " + dif2.size() + ", список этих элементов: " + dif2
-    if(logList.size()){
-        testRunner.fail("При сравнении списков были обнаружены несоответсвия. Их количество="+logList.size())
-        logList.each{
-            log.info(it)
-        }
-    }
-    else log.info "cписки равны"
-}
-
-def checkParameter(String paramName, def expValue, def currentValue){
-    if(currentValue != expValue){
-        testRunner.fail()
-        log.info("значение "+paramName+" не соответствует ожидаемому. ожидаемое ="+expValue.toString()+", фактическое ="+currentValue.toString())
-    }
-}
-
-def getAssignmentsReferralsInfoResponse = context.expand('${getAssignmentsReferralsInfo#Response}')
-def slurperJson = new JsonSlurper()
-def getAssignmentsReferralsInfo = slurperJson.parseText(getAssignmentsReferralsInfoResponse)
-def getAssignmentsInfoSAOResponse = context.expand('${getAssignmentsInfo#Response}')
-getAssignmentsInfoSAO = new XmlSlurper().parseText(getAssignmentsInfoSAOResponse)
-
-def assigmentsINFO=getAssignmentsReferralsInfo.payload.arInfo.assignments.items
-def assigmentsSAO=getAssignmentsInfoSAO.Body.getAssignmentsInfoResponse.assignment
-
-assigmentsSAO.sort {it.period.dateTo} // ментод принимает на вход лямбду в фигурных скобках. лябда - это функция которую можно передать в аргументы функции
-// в данной ситуации в лямбде  передается функция которая указывает как происходит сортировка по какому полю так можно сказать
-// it это над кем вызывается функция. В данной ситуации у нас массив ассайментов и вот эта функция вызывается над каждым асайментом и в итоге сортирует массв
-
-
-for (int i=1; i<assigmentsINFO.size(); i++){
-    if(assigmentsINFO[i-1].period.dateTo> assigmentsINFO[i].period.dateTo){
-        testRunner.fail(" не отсортированы по дате окончания ")
-    }
-}
-
-checkParameter("sizeAssigments", assigmentsINFO.size(),assigmentsSAO.size())
-
-
-compareLists(assigmentsSAO.asList(), assigmentsINFO, "assigments")
-//log.info "Проверено направление №"+ assigmentINFO.toBM.id
-
-]]></script></con:config></con:testStep><con:properties><con:property><con:name>omsNumber</con:name><con:value>7700007178231039</con:value></con:property><con:property><con:name>birthDate</con:name><con:value>1939-10-23</con:value></con:property></con:properties></con:testCase><con:testCase id="c76f2cb4-a693-44b7-bf12-4c49e6511f16" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="448304_АС1. Сервис ЕМИАС.Самозапись.Оркестратор вернул ошибку 500. Ошибка getReferralsInfo" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getAssignmentsReferralsInfo" id="8a84af19-86cd-4556-bd85-381847a93f5f"><con:settings/><con:config service="http://application-emiasinfo1.dev-emias.emias.ru" resourcePath="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAssignmentsReferralsInfo" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request/><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="edeaae88-4cbf-4d39-b8f8-6d1676b57995" name="Valid HTTP Status Codes =200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="15b1690a-c076-4a25-90e2-f078319a3651" name="code=SA_SERVER_ERROR"><con:configuration><path>$.payload.arInfo.referrals.error.code</path><content>SA_SERVER_ERROR</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="d448913b-9412-4caa-ab6b-d4f4295080f1" name="description = Сервис Самозапись.Оркестратор не отвечает"><con:configuration><path>$.payload.arInfo.referrals.error.description</path><content>Сервис Самозапись.Оркестратор не отвечает</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="fe95c7c5-4e65-4c77-a5bb-dd13f2251a4a" name="type=TECHNICAL"><con:configuration><path>$.payload.arInfo.referrals.error.type</path><content>TECHNICAL</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="51cad66e-05a2-4476-8d59-df830421c75a" name="redderal.items пустой"><con:configuration><path>$.payload.arInfo.referrals.items</path><content>[]</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="58f6ef0e-ba90-44b4-adb3-70d8c0963240" name="JsonPath Count. assignments.items=1"><con:configuration><path>$.payload.arInfo.assignments.items</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+</script></con:config></con:testStep><con:properties><con:property><con:name>omsNumber</con:name><con:value>7700007178231039</con:value></con:property><con:property><con:name>birthDate</con:name><con:value>1939-10-23</con:value></con:property></con:properties></con:testCase><con:testCase id="9b221cc9-ec69-410e-94d4-f10c5c804975" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Остуствуют обязательные входные параметры" searchProperties="true"><con:description>TestCase generated for REST Resource [] located at [/api/v1/saOrchestrator/getAssignmentsReferralsInfo]</con:description><con:settings/><con:testStep type="restrequest" name="Отсутсвует birthDate" id="d47acb9f-a82f-4e64-94d8-8eb681107384"><con:settings/><con:config service="http://application-emiasinfo1.dev-emias.emias.ru" resourcePath="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAssignmentsReferralsInfo" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request>{"birthDate":"1939-10-23","omsNumber":"7700007178231039","patientId":"10166510"}</con:request><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="64da3482-cff6-4b93-a197-5a299fe58fb3" name="Valid HTTP Status Codes = 400"><con:configuration><codes>400</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="a533af9b-443f-4128-a693-46008ec03104" name="code = BAD_REQUEST"><con:configuration><path>$.error.code</path><content>BAD_REQUEST</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="cc0dcc51-065d-4372-b6b2-77bbde0a42c3" name="description = Некорректные входные данные"><con:configuration><path>$.error.description</path><content>Некорректные входные данные</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="9c7a87b6-80c7-425d-b89f-671c3fa99e60" name="type = BUSINESS"><con:configuration><path>$.error.type</path><content>BUSINESS</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="omsNumber" value="${#TestCase#omsNumber}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>omsNumber</con:entry><con:entry>birthDate</con:entry><con:entry>Mock-saOrchestrator</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Отсутсвует omsNumber" id="05d30ba3-c07b-4230-a008-9d1efbc8095d"><con:settings/><con:config service="http://application-emiasinfo1.dev-emias.emias.ru" resourcePath="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Copy of getAssignmentsReferralsInfo" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request>{"birthDate":"1939-10-23","omsNumber":"7700007178231039","patientId":"10166510"}</con:request><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="64da3482-cff6-4b93-a197-5a299fe58fb3" name="Valid HTTP Status Codes = 400"><con:configuration><codes>400</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="a533af9b-443f-4128-a693-46008ec03104" name="code = BAD_REQUEST"><con:configuration><path>$.error.code</path><content>BAD_REQUEST</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="cc0dcc51-065d-4372-b6b2-77bbde0a42c3" name="description = Некорректные входные данные"><con:configuration><path>$.error.description</path><content>Некорректные входные данные</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="9c7a87b6-80c7-425d-b89f-671c3fa99e60" name="type = BUSINESS"><con:configuration><path>$.error.type</path><content>BUSINESS</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="birthDate" value="${#TestCase#birthDate}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>omsNumber</con:entry><con:entry>birthDate</con:entry><con:entry>Mock-saOrchestrator</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>omsNumber</con:name><con:value>7700007178231039</con:value></con:property><con:property><con:name>birthDate</con:name><con:value>1939-10-23</con:value></con:property></con:properties></con:testCase><con:testCase id="6901e101-b289-46c1-820f-a009c6aadad7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Исключение объектов, у которых был получен объект assignment.appointmentId" searchProperties="true"><con:settings/><con:testStep type="request" name="getAssignmentsInfo" id="5447879b-68bf-4775-86b4-c162175e1558" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SelfAppointmentServiceV5Binding</con:interface><con:operation>getAssignmentsInfo</con:operation><con:request name="getAssignmentsInfo" id="485ac4d3-02ef-4b7d-97c6-6024933fbd82"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://esbcamelvv.test.emias.mos.ru/proxy/Composite/saOrchestrator/v1S/ProxyService</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:v5="http://api.service.soap.emias.lanit.ru/v5/">
+<soap:Header>
+<wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+<wsse:UsernameToken>
+<wsse:Username>EIM</wsse:Username>
+</wsse:UsernameToken>
+</wsse:Security>
+</soap:Header>
+   <soap:Body>
+      <v5:getAssignmentsInfo>
+         <omsNumber>${#TestCase#omsNumber}</omsNumber>
+         <birthDate>${#TestCase#birthDate}</birthDate>
+         <returnExtended>true</returnExtended>
+         <externalSystemId>EIM</externalSystemId>
+      </v5:getAssignmentsInfo>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="84184d0c-6c78-4a0b-8e5e-95ce2b81afc3"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="restrequest" name="getAssignmentsReferralsInfo" id="4b21e825-c7e0-4476-8aa1-75bd45a9a513"><con:settings/><con:config service="http://application-emiasinfo1.dev-emias.emias.ru" resourcePath="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAssignmentsReferralsInfo" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request/><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="edeaae88-4cbf-4d39-b8f8-6d1676b57995" name="Valid HTTP Status Codes =200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="Mock-saOrchestrator" value="${#Project#Mock}/448375"/>
+  <con:entry key="omsNumber" value="${#TestCase#omsNumber}"/>
+  <con:entry key="birthDate" value="${#TestCase#birthDate}"/>
+</con:parameters><con:parameterOrder><con:entry>omsNumber</con:entry><con:entry>birthDate</con:entry><con:entry>Mock-saOrchestrator</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties><con:property><con:name>omsNumber</con:name><con:value>7700007178231039</con:value></con:property><con:property><con:name>birthDate</con:name><con:value>1939-10-23</con:value></con:property></con:properties></con:testCase><con:testCase id="c76f2cb4-a693-44b7-bf12-4c49e6511f16" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="448304_АС1. Сервис ЕМИАС.Самозапись.Оркестратор вернул ошибку 500. Ошибка getReferralsInfo" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getAssignmentsReferralsInfo" id="8a84af19-86cd-4556-bd85-381847a93f5f"><con:settings/><con:config service="http://application-emiasinfo1.dev-emias.emias.ru" resourcePath="/api/v3/saOrchestrator/getAssignmentsReferralsInfo" methodName="1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getAssignmentsReferralsInfo" id="193ea74c-8de8-445c-be0b-c2cad629dda2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#Endpoint}</con:endpoint><con:request/><con:originalUri>http://application-emiasinfo1.dev-emias.emias.ru/api/v1/saOrchestrator/getAssignmentsReferralsInfo</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="edeaae88-4cbf-4d39-b8f8-6d1676b57995" name="Valid HTTP Status Codes =200"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="15b1690a-c076-4a25-90e2-f078319a3651" name="code=SA_SERVER_ERROR"><con:configuration><path>$.payload.arInfo.referrals.error.code</path><content>SA_SERVER_ERROR</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="d448913b-9412-4caa-ab6b-d4f4295080f1" name="description = Сервис Самозапись.Оркестратор не отвечает"><con:configuration><path>$.payload.arInfo.referrals.error.description</path><content>Сервис Самозапись.Оркестратор не отвечает</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="fe95c7c5-4e65-4c77-a5bb-dd13f2251a4a" name="type=TECHNICAL"><con:configuration><path>$.payload.arInfo.referrals.error.type</path><content>TECHNICAL</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Match" id="51cad66e-05a2-4476-8d59-df830421c75a" name="redderal.items пустой"><con:configuration><path>$.payload.arInfo.referrals.items</path><content>[]</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="JsonPath Count" id="58f6ef0e-ba90-44b4-adb3-70d8c0963240" name="JsonPath Count. assignments.items=1"><con:configuration><path>$.payload.arInfo.assignments.items</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
   <con:entry key="Mock-saOrchestrator" value="${#Project#Mock}/448304"/>
   <con:entry key="omsNumber" value="${#TestCase#omsNumber}"/>
   <con:entry key="birthDate" value="${#TestCase#birthDate}"/>
